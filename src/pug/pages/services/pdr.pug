@@ -1,0 +1,28 @@
+-
+  const data = {
+    title: pageTitle,
+    subTitle: 'По инновационной технологии PDR',
+    textButton: 'Записаться на услугу',
+    isBenefits: true,
+    benefits: [
+      {icon: 'purse', text: 'от 1 500 ₽'},
+      {icon: 'time', text: 'от 30 минут'},
+    ],
+    image: 'hero-pdr.jpg',
+  }
+
+-
+  const dataAdvantages = [
+    ['Профессиональное обслуживание', 'В нашем центре, специалисты успешно выпрямляют вмятины без покраски более 12 лет.'],
+    ['Оптимальная стоимость', 'Поддерживаем приемлемый уровень цен на все услуги при неизменно высоком качестве выполняемой работы.'],
+  ]
+
++hero(data)
++advantages(dataAdvantages)
+//- include about-us.pug
++sectionVideo(articles)
++services()
+  +servicesList(services, siteNav[1].submenu[0].url)
++estimate(title)
++whereAreWe
+
