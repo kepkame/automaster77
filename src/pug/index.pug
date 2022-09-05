@@ -1,8 +1,12 @@
 extends layout/default.pug
 
-block variables
+block prepend variables
   - const bodyClass = 'page-home'
-  - const pageTitle = 'Homepage'
+  - const url = 'index.html'
+  //- - const pageTitle = 'Автомастер77'
 
 block content
   include pages/index/main.pug
+
+block prepend scripts
+  script(src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js")

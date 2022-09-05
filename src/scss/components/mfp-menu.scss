@@ -1,0 +1,254 @@
+.mfp-menu {
+  position: relative;
+}
+
+.mfp-menu__wrapper {
+  display: none;
+  position: fixed;
+  top: 62px;
+  left: 0;
+  width: 100%;
+  max-width: 450px;
+  height: calc(100vh - 62px);
+  background-color: $color-border;
+  transform: translateX(-100%);
+  transition: transform $transition-time ease-in-out;
+  z-index: 2;
+
+  .mfp-menu--show & {
+    display: block;
+  }
+
+  .mfp-menu--open & {
+    transform: translateX(0);
+  }
+}
+
+// .mfp-menu__content {
+
+// }
+
+.mfp-menu__nav {
+  background-color: $color-bg-primary;
+  padding: 0 15px 18px;
+
+  // .nav {
+
+  // }
+
+  .menu-item {
+    display: block;
+
+    & + .menu-item {
+      border-top: 1px solid rgba($color-line, 0.3);
+    }
+  }
+
+  .nav-top-link {
+    display: block;
+    line-height: 26px;
+    padding: 8px 15px 7px;
+    opacity: 1;
+    transition: opacity $transition-time ease;
+
+    &:focus,
+    &:hover {
+      text-decoration: none;
+      opacity: 0.7;
+    }
+
+    &:hover {
+      text-decoration: none;
+    }
+
+    &:focus {
+      outline-offset: 0;
+    }
+  }
+
+  .menu-item-has-children {
+    z-index: 1;
+
+    .icon--arrow {
+      position: absolute;
+      top: 15px;
+      right: 15px;
+      fill: $color-text-primary;
+      transform: rotate(90deg);
+      transition: transform $transition-time ease-in-out;
+      z-index: -1;
+    }
+
+    .nav-top-link:focus + .icon--arrow,
+    .nav-top-link:hover + .icon--arrow {
+      opacity: 0.7;
+    }
+
+    &.show .icon--arrow {
+      transform: rotate(270deg);
+    }
+
+    &.show .sub-menu {
+      display: block;
+      position: relative;
+      left: auto;
+      transform: translateX(0);
+    }
+
+    &.open .sub-menu {
+      max-height: 300px;
+      opacity: 1;
+    }
+
+    &.open .sub-menu .nav-top-link {
+      padding-left: 30px;
+    }
+  }
+
+  .sub-menu {
+    display: none;
+    position: fixed;
+    left: -99999px;
+    margin-bottom: 8px;
+    max-height: 0px;
+    opacity: 0;
+    transform: translateX(-10px);
+    transition: transform $transition-time ease,
+                opacity $transition-time ease;
+
+    .menu-item {
+      border-top: none;
+      padding-left: 0;
+    }
+
+    .nav-top-link {
+      font-size: 14px;
+      line-height: 22px;
+      padding-top: 8px;
+      padding-bottom: 8px;
+      transform: translateX(0px);
+      transition: padding-left $transition-time ease-out,
+                  opacity $transition-time ease;
+
+      &:focus,
+      &:hover {
+        opacity: 0.7;
+      }
+    }
+  }
+}
+
+.mfp-menu__footer {
+  padding: 30px 15px
+}
+
+.mfp-menu__contacts {
+  margin-bottom: 30px;
+}
+
+.mfp-menu__phone {
+  display: inline-block;
+  font-size: 20px;
+  line-height: 28px;
+  text-decoration: none;
+  color: $color-text-primary;
+  margin-right: 20px;
+  margin-bottom: 13px;
+
+  &:focus,
+  &:hover {
+    text-decoration: underline;
+    color: $color-text-primary;
+    outline: none;
+  }
+}
+
+.mfp-menu__messengers {
+  display: inline-block;
+  margin-bottom: 15px;
+}
+
+.mfp-menu__item {
+  display: inline-block;
+  line-height: 10px;
+  vertical-align: bottom;
+  margin-right: 20px;
+
+  &:last-child {
+    margin-right: 0;
+  }
+
+  .icon {
+    width: 23px;
+    height: 23px;
+    fill: $color-text-additional;
+    transition: fill $transition-time ease;
+
+    &:focus,
+    &:hover {
+      fill: $color-text-primary;
+    }
+  }
+}
+
+// .mfp-menu__item--whatsapp {
+
+// }
+
+// .mfp-menu__item--telegram {
+
+// }
+
+.mfp-menu .mfp-menu__callback {
+  font-size: 13px;
+  line-height: 20px;
+  padding: 5px 19px;
+}
+
+.mfp-menu__address {
+  line-height: 22px;
+  margin-bottom: 15px;
+}
+
+.mfp-menu__clock {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: flex-start;
+
+  .icon {
+    width: 22px;
+    height: 22px;
+    fill: $color-text-primary;
+    margin-right: 5px;
+  }
+}
+
+.mfp-menu__working-hours {
+
+  span {
+    display: block;
+    font-size: 14px;
+    line-height: 22px;
+  }
+}
+
+.mfp-menu__bg {
+  display: none;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: calc(100vh - 62px);
+  background-color: rgba($color-bg-primary, 0.8);
+  opacity: 0;
+  transition: opacity $transition-time ease;
+  z-index: 1;
+
+  .mfp-menu--show & {
+    display: block;
+  }
+
+  .mfp-menu--open & {
+    opacity: 1;
+  }
+}

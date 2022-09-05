@@ -1,1 +1,54 @@
-h2 Footer
+footer.site-footer#site-footer
+  .container
+    .site-footer__main
+      .site-footer__col.site-footer__col--company
+        .site-footer__logo
+          a.custom-logo-link(href= siteNav[0].url)
+            span.custome-logo #{siteName}
+        .site-footer__desc Центр удаления вмятин без покраски в Москве
+        ul.site-footer__messengers.messengers
+          li.messengers__item
+            a.messengers__link.messengers__link--vk(href= siteVk, aria-label="Мы в Вконтакте", target="_blank")
+              +icon-mono('vk-outline')(width="24", height="24")
+          li.messengers__item
+            a.messengers__link.messengers__link--youtube(href= siteYoutube, aria-label="Мы в YouTube", target="_blank")
+              +icon-mono('youtube-outline')(width="24", height="24")
+          li.messengers__item
+            a.messengers__link.messengers__link--instagram(href= siteInstagram, aria-label="Мы в Instagram", target="_blank")
+              +icon-mono('instagram-outline')(width="22", height="22")
+
+      .site-footer__col.site-footer__col--quick-links
+        h3.site-footer__title Быстрые ссылки
+        nav.site-footer__nav#site-nav-pages
+          - let i = 0
+          ul.nav-menu
+            while i <= 3
+              if (i != 1)
+                li.menu-item: a.nav-top-link(href= siteNav[i].url) #{siteNav[i].name}
+              - i++
+
+      .site-footer__col.site-footer__col--services
+        h3.site-footer__title Услуги
+        nav.site-footer__nav#site-nav-services
+          - let j = 0
+          ul.nav-menu
+            while j <= 3
+              li.menu-item: a.nav-top-link(href= siteNav[1].submenu[j].url) #{siteNav[1].submenu[j].name}
+              - j++
+
+      .site-footer__col.site-footer__col--contacts
+        h3.site-footer__title Контакты
+        .site-footer__contacts
+          .site-footer__contacts-inner
+            a.site-footer__phone(href= sitePhoneLink)
+              +icon-mono('phone')(width="22", height="22")
+              span= sitePhone
+            a.site-footer__messenger.site-footer__messenger--whatsapp(href= siteWhatsapp, aria-label="Мы в WhatsApp")
+              +icon-mono('whatsapp-outline')(width="22", height="22")
+            a.site-footer__messenger.site-footer__messenger--telegram(href= siteTelegram, aria-label="Мы в Telegram")
+              +icon-mono('telegram')(width="22", height="22")
+        span.site-footer__address #{siteFullAddress}
+
+    .site-footer__bottom
+      span.site-footer__copyright © #{new Date().getFullYear()} #{siteName}. Все права защищены.
+      a.site-footer__privacy(href= sitePagePrivacy) Политика конфиденциальности

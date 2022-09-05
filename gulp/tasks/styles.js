@@ -18,7 +18,7 @@ export const sassBuild = () => (
     .pipe(sassGlob())
     .pipe(sass({
       includePaths: ['./node_modules'],
-    }))
+    }).on('error', sass.logError))
     .pipe(gulpif(config.isProd, gcmq()))
     .pipe(gulpif(config.isProd, autoprefixer()))
     .pipe(gulpif(config.isProd, cleanCSS({ level: 2 })))

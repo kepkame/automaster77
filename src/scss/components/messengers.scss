@@ -1,0 +1,61 @@
+// .messengers {
+
+// }
+
+.messengers__item {
+  display: inline-block;
+  vertical-align: bottom;
+
+  & + & {
+    margin-left: 15px;
+  }
+}
+
+.messengers__link {
+  display: block;
+  position: relative;
+  width: 46px;
+  height: 46px;
+  background-color: $color-border;
+  border-radius: 50%;
+  transition: background-color $transition-time ease;
+
+  .icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    fill: $color-text-primary;
+    transform: translate(-50%, -50%);
+  }
+
+  &:hover {
+    background-color: mix($color-border, #ffffff, 80);
+  }
+}
+
+// .messengers__link--vk {
+
+// }
+
+.icon--vk-outline {
+  width: 24px;
+  height: 24px;
+}
+
+// .messengers__link--youtube {
+
+// }
+
+.icon--youtube-outline {
+  width: 24px;
+  height: 24px;
+}
+
+// .messengers__link--instagram {
+
+// }
+
+.icon--instagram-outline {
+  width: 22px;
+  height: 22px;
+}

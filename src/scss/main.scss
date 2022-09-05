@@ -1,6 +1,20 @@
+// Helpers
 @import './helpers/variables';
 @import './helpers/functions';
 @import './helpers/mixins';
+@import './helpers/placeholders';
+
+// Base
+@import './base/typography';
+@import './base/animations';
 @import './base/base';
-@import './layout/**/*';
+
+// Swiper slider
+// @import 'libraries/swiper-bundle.min';
+@import 'libraries/swiper';
+
 @import './components/**/*';
+@import './layout/**/*';
+
+// Pages
+@import './pages/home';

@@ -8,14 +8,21 @@ html(lang="ru")
   head
     include ../parts/head.pug
 
-  body(class= bodyClass)
-    block header
-      include ../parts/header.pug
+  body(class= 'no-js ' + bodyClass)
+    include ../parts/mfp-menu.pug
 
-    block content
+    .page#page
 
-    block footer
-      include ../parts/footer.pug
+      block header
+        include ../parts/header.pug
 
-    block scripts
-      script(src="js/main.min.js?v=" + siteVersion)
+      .site-content#content
+        main.site-main
+          block content
+
+      block footer
+        include ../parts/footer.pug
+
+      block scripts
+        script(src="https://api-maps.yandex.ru/2.1/?apikey=3daf2617-328b-4ad9-b0c3-afc42152415c&lang=ru_RU")
+        script(src="js/main.min.js?v=" + siteVersion)

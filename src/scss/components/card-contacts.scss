@@ -1,0 +1,54 @@
+.card-contacts {
+  color: $color-text-secondary;
+  background-color: #EEF2F3;
+  padding: 86px 15px 60px;
+}
+
+.card-contacts__title {
+  margin-top: 0;
+}
+
+.card-contacts__wrapper {
+
+  h5 {
+    margin-top: 0;
+    margin-bottom: 5px;
+  }
+}
+
+.card-contacts__inner {
+  margin-bottom: 30px;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  &--address {
+
+
+    & > span {
+      display: block;
+      margin-bottom: 5px;
+    }
+  }
+
+  // &--contact {
+
+  // }
+
+  &--working-hours {
+
+    & > span {
+      display: block;
+    }
+  }
+}
+
+// .card-contacts__phone {
+
+// }
+
+// .card-contacts__email {
+
+// }
+

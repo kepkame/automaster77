@@ -1,0 +1,31 @@
+section.about-us
+  .about-us__container
+    .about-us__wrapper
+
+      .about-us__col.about-us__col--text
+        .about-us__text-wrap
+          h2.about-us__title.title-line.title-line--grey О нас
+          .about-us__description
+            p Автомастер77 один из самых профессиональных центров удаления вмятин в Москве. Сотрудники центра отлично знают своё дело, имеют опыт работы от 5 до 12 лет в индустрии.
+            p Наша команда починила более тысячи автомобилей, что говорит о колоссальном опыте и доверии со стороны наших клиентов.
+            p Мы постоянно работаем над качеством наших услуг и профессиональных навыков сотрудников. Потрясающий результат заставит вас улыбнуться и заново восхищаться своим авто!
+          a.about-us__btn.btn.btn--small(href= `${siteNav[1].submenu[0].url}`) Подробнее об услуге
+
+      .about-us__col.about-us__col--media
+        - const src = 'pdr-kryuchki.jpg'
+        - const srcParts = src.split('.')
+        - const [srcFirstPart, extname] = srcParts
+
+        picture
+          source(type="image/avif", media="(min-width:992px)", data-srcset=`images/large/${srcFirstPart}.avif`, srcset=srcPlaceholder)
+          source(type="image/avif", media="(min-width:767px)", data-srcset=`images/${srcFirstPart}-crop.avif`, srcset=srcPlaceholder)
+          source(type="image/avif", data-srcset=`images/${srcFirstPart}.avif`, srcset=srcPlaceholder)
+          source(type="image/webp", media="(min-width:992px)", data-srcset=`images/large/${srcFirstPart}.webp`, srcset=srcPlaceholder)
+          source(type="image/webp", media="(min-width:767px)", data-srcset=`images/${srcFirstPart}-crop.webp`, srcset=srcPlaceholder)
+          source(type="image/webp", data-srcset=`images/${srcFirstPart}.webp`, srcset=srcPlaceholder)
+          source(type= (extname == 'jpg') ? 'image/jpeg' : 'image/' + extname, media="(min-width:992px)", data-srcset=`images/large/${srcFirstPart}.${extname}`, srcset=srcPlaceholder)
+          source(type= (extname == 'jpg') ? 'image/jpeg' : 'image/' + extname, media="(min-width:767px)", data-srcset=`images/${srcFirstPart}.${extname}-crop`, srcset=srcPlaceholder)
+          img(class="lazy about-us__image", data-srcset=`images/${srcFirstPart}.${extname}`, src=srcPlaceholder, alt="PDR крючки на стене")&attributes(attributes)
+
+      .about-us__dots
+        span.icon-dots

@@ -8,7 +8,11 @@ import gulpif from 'gulp-if';
 import config from '../config';
 
 export const scriptsBuild = () => (
-  browserify(`${config.src.js}/main.js`, { debug: true })
+  browserify([
+    `${config.src.js}/libraries/svgxuse.min.js`,
+    `${config.src.js}/libraries/inputmask.min.js`,
+    `${config.src.js}/main.js`,
+  ], { debug: true })
     .transform('babelify', { presets: ['@babel/preset-env'] })
     .bundle()
     .on('error', function browserifyError(error) {

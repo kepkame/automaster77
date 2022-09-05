@@ -1,0 +1,19 @@
+mixin servicesList(list, currentPage = false)
+  ul.services-list
+    each item in list
+      if (item.url !== currentPage)
+        li.services-list__card
+          .services-list__wrapper
+            a.services-list__title(href= `${item.url}`, tabindex="-1"): h3 #{item.name}
+            p.services-list__description #{item.text}
+            a.services-list__more(href= `${item.url}`, tabindex="-1") Перейти
+          a.services-list__media(href= `${item.url}`)
+            +img(item.src)(class="services-list__img")
+
+mixin services(title = 'Другие наши услуги')
+  .section-services
+    .container
+      .section-services__wrapper
+        h2.section-services__title.title-center.title-line #{title}
+        block
+

@@ -1,0 +1,138 @@
+.advantages {
+  position: relative;
+  background-color: $color-border;
+  z-index: 10;
+}
+
+.advantages__wrapper {
+  background-color: $color-border;
+  padding: 30px 15px;
+  box-sizing: border-box;
+}
+
+.advantages__col {
+  color: $color-text-primary;
+
+  & + & {
+    position: relative;
+    margin-top: 60px;
+
+    &:after {
+      content: "";
+      position: absolute;
+      top: -30px;
+      left: 0;
+      width: 100%;
+      height: 1px;
+      background-color: rgba($color-text-primary, 0.3);
+    }
+  }
+}
+
+.advantages__title {
+  font-size: 18px;
+  font-family: $font-family-base;
+  line-height: 26px;
+  margin-top: 0;
+  margin-bottom: 19px;
+
+  &:after {
+    bottom: -9px;
+    width: 75px;
+    height: 2px;
+    background-color: rgba($color-text-primary, 0.3);
+  }
+}
+
+.advantages__text {
+  margin: 0;
+}
+
+@media (min-width: $grid-breakpoints-md) {
+  .advantages__wrapper {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: stretch;
+    justify-content: flex-start;
+    padding-right: 20px;
+    padding-left: 20px;
+  }
+
+  .advantages__col {
+    flex-basis: calc(50% - 30px);
+
+    & + & {
+      margin-top: 0;
+      margin-left: 60px;
+
+      &:after {
+        top: 0;
+        left: -30px;
+        width: 1px;
+        height: 100%;
+      }
+    }
+  }
+}
+
+@media (min-width: $grid-breakpoints-lg) {
+  .advantages__content {
+    max-width: 870px;
+  }
+
+  .advantages__wrapper {
+    justify-content: flex-start;
+    position: absolute;
+    top: -136px;
+    right: 0;
+    width: 890px;
+    padding-left: 45px;
+    padding-right: 0;
+  }
+
+  .advantages__col {
+    flex-basis: 380px;
+
+    & + & {
+      margin-left: 7.8%;
+      margin-left: 60px;
+    }
+  }
+}
+
+@media (min-width: $grid-breakpoints-full) {
+  .advantages {
+    width: 100%;
+    max-width: 100%;
+    z-index: 1;
+  }
+
+  .advantages__content {
+    position: absolute;
+    // width: auto;
+    top: -136px;
+    // left: 50%;
+    left: 0;
+    left: calc(50% - 215px);
+    // width: 100%;
+    width: auto;
+    max-width: 100%;
+    // transform: translateX(-50%);
+    overflow: hidden;
+  }
+
+  .advantages__wrapper {
+    justify-content: flex-start;
+    position: relative;
+    top: 0;
+    width: 100%;
+    padding-left: 45px;
+    padding-right: 0;
+  }
+}
+
+@media (min-width: $grid-breakpoints-4k) {
+  .advantages__content {
+    max-width: 920px;
+  }
+}

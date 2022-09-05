@@ -1,3 +1,195 @@
 .btn {
   display: inline-block;
+  font-size: 18px;
+  line-height: 20px;
+  text-decoration: none;
+  white-space: nowrap;
+  color: $color-text-primary;
+  background-color: $color-primary;
+  border: none;
+  padding: 14px 30px 13px;
+  box-sizing: border-box;
+  transition: background-color $transition-time ease;
+  cursor: pointer;
+
+  &:focus {
+    text-decoration: none;
+    color: $color-text-primary;
+  }
+
+  &:hover {
+    text-decoration: none;
+    color: $color-text-primary;
+    background-color: $color-primary-hover;
+  }
+}
+
+.btn--white {
+  color: $color-text-secondary;
+  background-color: $color-text-primary;
+
+  &:hover {
+    color: $color-text-secondary;
+    background-color: mix($color-text-primary, #000000, 85);
+    border-color: mix($color-text-primary, #000000, 85);
+  }
+}
+
+.btn--stroke {
+  color: $color-primary;
+  background-color: transparent;
+  border: 1px solid $color-primary;
+  padding: 13px 29px 12px;
+  transition: color $transition-time ease,
+              background-color $transition-time ease,
+              border $transition-time ease;
+
+  &:focus,
+  &:hover {
+    color: $color-text-primary;
+    background-color: $color-primary-hover;
+    border: 1px solid $color-primary-hover;
+  }
+
+  &.btn--white {
+    color: $color-text-primary;
+    border: 1px solid $color-text-primary;
+
+    &:focus,
+    &:hover {
+      color: $color-text-secondary;
+      background-color: $color-text-primary;
+      border: 1px solid $color-text-primary;
+    }
+  }
+}
+
+// Size small
+.btn--small {
+  font-size: 16px;
+  line-height: 16px;
+  padding: 10px 25px 9px;
+
+  &.btn--stroke {
+    padding: 9px 24px 8px;
+  }
+}
+
+// Icon
+.btn--icon {
+  position: relative;
+
+  .icon {
+    display: inline-block;
+    position: absolute;
+    top: 12px;
+    left: 30px;
+    width: 22px;
+    height: 22px;
+    fill: $color-text-primary;
+    transition: fill $transition-time ease;
+  }
+
+  &.btn--white .icon {
+    fill: $color-text-secondary;
+  }
+
+  &.btn--stroke .icon {
+    fill: $color-primary;
+  }
+
+  &.btn--stroke:focus .icon,
+  &.btn--stroke:hover .icon {
+    fill: $color-text-primary;
+  }
+
+  &.btn--stroke.btn--white .icon {
+    fill: $color-text-primary;
+  }
+
+  &.btn--stroke.btn--white:focus .icon,
+  &.btn--stroke.btn--white:hover .icon {
+    fill: $color-text-secondary;
+  }
+
+  span {
+    display: inline-block;
+    padding-left: 30px;
+  }
+
+  &.btn--small {
+
+    .icon {
+      top: 8px;
+      left: 25px;
+      width: 18px;
+      height: 18px;
+    }
+
+    span {
+      padding-left: 24px;
+    }
+  }
+}
+
+.btn-arrow {
+  display: inline-block;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+
+  .icon {
+    fill: $color-text-primary;
+  }
+}
+
+.btn-play {
+  position: relative;
+  width: 62px;
+  height: 62px;
+  display: inline-block;
+  background-color: #212121;
+  border: none;
+  border-radius: 50%;
+  padding: 20px;
+  box-sizing: border-box;
+  cursor: pointer;
+  opacity: 0.8;
+  transform: scale(1);
+  transition: background-color $transition-time ease,
+              opacity $transition-time ease,
+              transform $transition-time ease;
+
+  .icon {
+    fill: $color-text-primary;
+    position: absolute;
+    top: 50%;
+    left: calc(50% + 2px);
+    width: 21px;
+    height: 26px;
+    transform: translate(-50%, -50%) scale(1);
+    transition: transform $transition-time ease;
+  }
+
+  &:focus,
+  &:hover {
+    background-color: $color-primary;
+    opacity: 1;
+
+    .icon {
+      transform: translate(-50%, -50%) scale(1.15);
+    }
+  }
+}
+
+@media (min-width: $grid-breakpoints-md) {
+  .btn-play {
+    width: 74px;
+    height: 74px;
+
+    .icon {
+      width: 24px;
+      height: 30px;
+    }
+  }
 }

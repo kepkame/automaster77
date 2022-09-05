@@ -1,0 +1,35 @@
+mixin sectionVideo(slider, title = 'Видео работ на YouTube', maxSlides = 10)
+  section.section-video
+    .section-video__container
+      .section-video__wrapper
+        h2.section-video__title.title-center.title-line #{title}
+
+        .section-video__inner
+          button.slider-coverflow__btn.slider-coverflow__btn--prev.btn-arrow(aria-label="Предыдущий")
+            +icon-mono('arrow')(width="19px", height="31px")
+
+          button.slider-coverflow__btn.slider-coverflow__btn--next.btn-arrow(aria-label="Следующий")
+            +icon-mono('arrow')(width="19px", height="31px")
+
+          .section-video__slider.slider-coverflow.swiper
+
+            .slider-coverflow__wrapper.swiper-wrapper
+              - let count = 0
+              each item in slider.reverse()
+                if (count++ < maxSlides)
+                  .slider-coverflow__card.swiper-slide
+                    .slider-coverflow__inner
+                      h3.visually-hidden #{item.title}
+                      a.slider-coverflow__media(href= `https://youtu.be/${item.video}`, target="_blank")
+                        +imgNotLazy(item.src, item.title)
+                        button.btn-play(aria-label="Смотреть")
+                          +icon-mono('play')(class="slider-3d__play", width="21", height="26")
+
+          .slider-coverflow__pagination.swiper-pagination
+
+    .section-video__bg
+
+
+
+
+

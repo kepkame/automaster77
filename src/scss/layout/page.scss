@@ -1,3 +1,16 @@
 .page-content {
   flex-grow: 1;
 }
+
+.entry-content {
+  margin-bottom: 90px;
+}
+
+.entry-header {
+
+  .title-line:after {
+    left: auto;
+    right: calc(100% - 85px);
+    width: 100%;
+  }
+}

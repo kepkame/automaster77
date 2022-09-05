@@ -1,0 +1,30 @@
+mixin whereAreWe()
+  .where-are-we
+    .where-are-we__content.card-contacts
+      h2.card-contacts__title.title-line.title-line--grey Где мы находимся
+      .card-contacts__wrapper
+        .card-contacts__inner.card-contacts__inner--address
+          h5 Адрес
+          span #{siteAddress}
+          a.btn.btn--small.btn--stroke.btn--icon(href= routeYandexMap, target="_blank")
+            +icon-mono('location-outline')
+            span Проложить маршрут
+
+        .card-contacts__inner.card-contacts__inner--contact
+          h5 Контакты
+          .card-contacts__phone
+            | Телефон: !{' '}
+            a(href= sitePhoneLink) #{sitePhone}
+          .card-contacts__email
+            | Email: !{' '}
+            a(href= siteEmailLink) #{siteEmail}
+
+        .card-contacts__inner.card-contacts__inner--working-hours
+          h5 Время работы
+          span #{siteWorkingHours.weekdays}
+          span #{siteWorkingHours.saturday}
+          span #{siteWorkingHours.sunday}
+
+    .where-are-we__map#map
+    button.where-are-we__route(aria-label="Смотреть видеомаршрут как доехать", title="Видеомаршрут")
+      +imgLazy('video-marshrut.jpg', 'Дорога улицы Беломорская в Москве')(width="235", height="131")

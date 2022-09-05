@@ -1,0 +1,8 @@
+mixin nav(menu, activePage = false, classMenu = 'nav-menu')
+  ul(class=classMenu)
+    each item in menu
+      li.menu-item(class={'current_page_item': item.url === activePage}, class={'menu-item-has-children': typeof item.submenu == 'object'})
+        a.nav-top-link(href=`${item.url}`) #{item.name}
+        if (item.submenu)
+          +icon-mono('arrow')(width="12", height="12")
+          +nav(item.submenu, false, 'sub-menu')

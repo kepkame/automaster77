@@ -1,22 +1,41 @@
-mixin imgLazy(src)
-  img(class="lazy", data-src=src, src="images/common/placeholder.png", alt="")&attributes(attributes)
+mixin imgLazy(src, altText = 'Фотография без описания')
+  img(class="lazy", data-src=`images/${src}`, src="images/common/placeholder.png", alt= altText)&attributes(attributes)
 
-
-mixin img(src, srcPlaceholder="images/common/placeholder.png")
+mixin img(src, altText = 'Фотография без описания', srcPlaceholder="images/common/placeholder.png")
   - const srcParts = src.split('.')
   - const [srcFirstPart, extname] = srcParts
 
   picture
-    source(type="image/avif", data-srcset=`${srcFirstPart}.avif`, srcset=srcPlaceholder)
-    source(type="image/webp", data-srcset=`${srcFirstPart}.webp`, srcset=srcPlaceholder)
-    img(class="lazy", data-src=`${srcFirstPart}.${extname}`, src=srcPlaceholder, alt="")&attributes(attributes)
+    source(type="image/avif", data-srcset=`images/${srcFirstPart}.avif`, srcset=srcPlaceholder)
+    source(type="image/webp", data-srcset=`images/${srcFirstPart}.webp`, srcset=srcPlaceholder)
+    img(class="lazy", data-src=`images/${srcFirstPart}.${extname}`, src=srcPlaceholder, alt= altText)&attributes(attributes)
 
+mixin imgNotLazy(src, altText = 'Фотография без описания')
+  - const srcParts = src.split('.')
+  - const [srcFirstPart, extname] = srcParts
 
-mixin img2x(src, srcPlaceholder="images/common/placeholder.png")
+  picture
+    source(type="image/avif", srcset=`images/${srcFirstPart}.avif`)
+    source(type="image/webp", srcset=`images/${srcFirstPart}.webp`)
+    img(src=`images/${srcFirstPart}.${extname}`, alt= altText)&attributes(attributes)
+
+mixin imgAdaptive(src, altText = 'Фотография без описания', srcPlaceholder="images/common/placeholder.png", width="760")
+  - const srcParts = src.split('.')
+  - const [srcFirstPart, extname] = srcParts
+
+  picture
+    source(type="image/avif", media=`(min-width:${width}px)`, data-srcset=`images/large/${srcFirstPart}.avif`, srcset=srcPlaceholder)
+    source(type="image/avif", data-srcset=`images/${srcFirstPart}.avif`, srcset=srcPlaceholder)
+    source(type="image/webp", media=`(min-width:${width}px)`, data-srcset=`images/large/${srcFirstPart}.webp`, srcset=srcPlaceholder)
+    source(type="image/webp", data-srcset=`images/${srcFirstPart}.webp`, srcset=srcPlaceholder)
+    source(type="image/jpeg", media=`(min-width:${width}px)`, data-srcset=`images/large/${srcFirstPart}.jpg`, srcset=srcPlaceholder)
+    img(class="lazy", data-srcset=`images/${srcFirstPart}.jpg`, src=srcPlaceholder, alt= altText)&attributes(attributes)
+
+mixin img2x(src, altText = 'Фотография без описания', srcPlaceholder="images/common/placeholder.png")
   - const srcParts = src.split('.')
   - const [srcFirstPart, extname] = srcParts
 
   picture
     source(type="image/avif", data-srcset=`${srcFirstPart}.avif 1x, ${srcFirstPart}@2x.avif 2x`, srcset=srcPlaceholder)
     source(type="image/webp", data-srcset=`${srcFirstPart}.webp 1x, ${srcFirstPart}@2x.webp 2x`, srcset=srcPlaceholder)
-    img(class="lazy", data-src=`${srcFirstPart}.${extname}`, data-srcset=`${srcFirstPart}.${extname} 1x, ${srcFirstPart}@2x.${extname} 2x`, src=srcPlaceholder, alt="")&attributes(attributes)
+    img(class="lazy", data-src=`${srcFirstPart}.${extname}`, data-srcset=`${srcFirstPart}.${extname} 1x, ${srcFirstPart}@2x.${extname} 2x`, src=srcPlaceholder, alt= altText)&attributes(attributes)

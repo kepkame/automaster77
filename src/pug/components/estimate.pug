@@ -1,0 +1,43 @@
+-
+  const defaultText = [
+    `Вы можете заказать предварительную оценку стоимости удаления вмятин отправив фотографии повреждения в <a href="${siteWhatsapp}" target="_blank">WhatsApp</a>, <a href="${siteTelegram}" target="_blank">Telegram</a> либо заполнив форму.`,
+    'Желательно делать несколько фотографий под разными углами и на разном расстоянии, чтобы была видна глубина вмятины.',
+  ]
+
+mixin estimate(title = 'Предварительная оценка по фото', text = defaultText, images = [['primer-povregdeniya-pdr-1.jpg', 'Фото вмятины на автомобиле'], ['primer-povregdeniya-pdr-2.jpg', 'Фото вмятины на автомобиле']], imagesCover = [['primer-povregdeniya-pdr-1-cover.jpg', 'Фото вмятины на автомобиле'], ['primer-povregdeniya-pdr-2-cover.jpg', 'Фото вмятины на автомобиле']])
+  .estimate
+    .container
+      .estimate__wrapper
+        .estimate__col.estimate__col--text
+          h2.estimate__title.title-line.title-line--grey #{title}
+
+          .estimate__desc
+            each item in text
+              p!= item
+
+          +formEstimate('estimate__form')
+
+        .estimate__col.estimate__col--slider
+          .estimate__slider.slider-phone
+            +img('mockup_iphone_in_hand.png')(class="slider-phone__hand", width="506", height="625", alt="iPhone в руке")
+
+            .slider-phone__wrapper
+              button.slider-phone__control.slider-phone__control--prev.btn-arrow(aria-label="Предыдущий")
+                +icon-mono('arrow-circle')(class="slider-phone__icon", width="18px", height="18px")
+              button.slider-phone__control.slider-phone__control--next.btn-arrow(aria-label="Следующий")
+                +icon-mono('arrow-circle')(class="slider-phone__icon", width="18px", height="18px")
+
+              .slider-phone__photos.swiper
+                .slider-phone__inner.swiper-wrapper
+                  each item in images
+                    .slider-phone__item.swiper-slide
+                      +imgNotLazy(`${item[0]}`, `${item[1]}`)(class="slider-phone__img swiper-lazy", width="182", height="383")
+
+              +imgLazy('mockup-iphone-camera-top.png')(class="slider-phone__app-camera slider-phone__app-camera--top", width="232", height="484")
+              +imgLazy('mockup-iphone-camera-bottom.png')(class="slider-phone__app-camera slider-phone__app-camera--bottom", width="232", height="484")
+
+              .slider-phone__thumb.swiper
+                .slider-phone__inner.swiper-wrapper
+                  each itemCover in imagesCover
+                    .slider-phone__item.swiper-slide
+                      +imgNotLazy(`${itemCover[0]}`, `${itemCover[1]}`)(class="slider-phone__img swiper-lazy", width="24", height="24")

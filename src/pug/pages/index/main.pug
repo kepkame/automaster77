@@ -1,1 +1,28 @@
-h1 Content
+-
+  const data = {
+    title: 'Центр удаления вмятин',
+    subTitle: 'Вернём вид нового автомобиля',
+    textButton: 'Записаться на ремонт',
+    isBenefits: false,
+    benefits: [
+      {icon: 'purse', text: 'от 1 500 ₽'},
+      {icon: 'time', text: 'от 30 минут'},
+    ],
+    image: 'avtosalon.jpg',
+  }
+
+-
+  const dataAdvantages = [
+    ['Оптимальная стоимость', 'Поддерживаем приемлемый уровень цен на все услуги при неизменно высоком качестве выполняемой работы.'],
+    ['Индивидуальный подход', 'Всегда вникаем в потребности и предлагаем персональное решение.'],
+  ]
+
++hero(data)
++advantages(dataAdvantages)
+include about-us.pug
++sectionVideo(articles)
++services()
+  +servicesList(services, siteNav[1].submenu[0].url)
++estimate(title)
++whereAreWe
+

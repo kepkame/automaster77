@@ -1,0 +1,9 @@
+mixin advantages(data)
+  section.advantages
+    h2.visually-hidden Почему обращаются именно к нам
+    .advantages__content
+      .advantages__wrapper
+        each item in data
+          .advantages__col
+            h6.advantages__title.title-line.title-line--grey #{item[0]}
+            p.advantages__text #{item[1]}

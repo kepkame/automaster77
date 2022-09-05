@@ -8,6 +8,11 @@
   box-sizing: inherit;
 }
 
+*:focus {
+  outline: 2px solid $color-primary-hover;
+  outline-offset: 2px;
+}
+
 html {
   height: 100%;
 
@@ -17,11 +22,66 @@ html {
 body {
   display: flex;
   flex-direction: column;
-  box-sizing: border-box;
 
   min-height: 100%;
 
-  font-family: $font-family-primary;
+  font-size: 16px;
+  font-family: $font-family-base;
+  line-height: 26px;
+  color: $color-text-primary;
+  background-color: $color-bg-primary;
+  box-sizing: border-box;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: $font-family-title;
+  margin: 0.67em 0;
+}
+
+h1 {
+  font-size: 46px;
+  line-height: 50px;
+  text-transform: uppercase;
+}
+
+h2 {
+  font-size: 34px;
+  line-height: 40px;
+}
+
+h3 {
+  font-size: 26px;
+  line-height: 32px;
+}
+
+h4 {
+  font-size: 24px;
+  line-height: 28px;
+}
+
+h5 {
+  font-size: 20px;
+  line-height: 22px;
+}
+
+h6 {
+  font-size: 18px;
+  line-height: 22px;
+}
+
+a {
+  font-size: inherit;
+  font-family: inherit;
+  font-weight: inherit;
+  line-height: inherit;
+  text-decoration: none;
+  color: $color-primary;
+
+  &:focus,
+  &:hover {
+    text-decoration: underline;
+    color: $color-primary-hover;
+  }
 }
 
 img {
@@ -31,10 +91,92 @@ img {
   vertical-align: middle;
 }
 
+.icon-dots {
+  display: inline-block;
+  width: 628px;
+  height: 452px;
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg width='26' height='26' viewBox='0 0 26 26' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M4 2C4 3.10059 3.10059 4 2 4C0.899407 4 0 3.10059 0 2C0 0.89941 0.899407 0 2 0C3.10059 0 4 0.89941 4 2Z' fill='%23363636'/%3e%3c/svg%3e");
+  background-size: 26px 26px;
+  background-repeat: repeat;
+}
 
-@each $heading, $font-size in $font-size-headings {
-  #{$heading} {
-    font-size: $font-size;
-    font-family: $font-family-secondary;
+.title-center {
+  text-align: center;
+}
+
+.title-line {
+  position: relative;
+  margin-bottom: 42px;
+
+  &:after {
+    content: "";
+    position: absolute;
+    bottom: -12px;
+    left: 0;
+    width: 85px;
+    height: 3px;
+    background-color: $color-primary;
+  }
+
+  &--grey:after {
+    background-color: rgba($color-text-secondary, 0.3);
+  }
+
+  &.title-center:after {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+
+.visually-hidden:not(:focus):not(:active) {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  bottom: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+@media (min-width: $grid-breakpoints-md) {
+  h1 {
+    font-size: 56px;
+    line-height: 62px;
+    text-transform: uppercase;
+  }
+
+  h2 {
+    font-size: 38px;
+    line-height: 42px;
+  }
+
+  h3 {
+    font-size: 32px;
+    line-height: 36px;
+  }
+
+  .entry-content {
+    margin-bottom: 90px;
+  }
+
+  .entry-header .title-line:after {
+    right: calc(100% - 130px);
+  }
+}
+
+@media (min-width: $grid-breakpoints-xl) {
+  .entry-content {
+    margin-bottom: 120px;
+  }
+}
+
+@media (min-width: 1440px) {
+  .entry-header .title-line:after {
+    left: 0;
+    right: auto;
+    width: 130px;
   }
 }

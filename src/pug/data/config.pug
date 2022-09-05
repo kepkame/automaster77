@@ -1,3 +1,180 @@
 - const siteVersion = '0.0.0'
-- const siteName = 'Site Name'
-- const siteDescription = 'Site Description'
+- const siteName = 'АвтоМастер77'
+- const siteDescription = 'Автомастер77 один из самых профессиональных центров удаления вмятин в Москве. Сотрудники имеют опыт работы от 5 до 12 лет. Починили более тысячи автомобилей.'
+- const siteAddress = 'Москва, ул. Беломорская, д. 40, стр. 5'
+- const siteFullAddress = 'Москва, ул. Беломорская, д. 40, стр. 5, этаж 4'
+- const siteWorkingHours = {weekdays: 'пн-пт: 10:00 - 19:00', saturday: 'сб: 11:00 - 16:00', sunday: 'вс: выходной'}
+- const sitePhone = '+7 (985) 111-88-28'
+- const sitePhoneLink = 'tel:+79851118828'
+- const siteEmail = 'info@automaster77.com'
+- const siteEmailLink = 'mailto:info@automaster77.com'
+- const siteWhatsapp = 'https://wa.me/79851118828'
+- const siteTelegram = 'https://t.me/automaster77'
+- const siteVk = 'https://vk.com/autovmyatin_net'
+- const siteYoutube = 'https://www.youtube.com/channel/UCV0w-5PLLZy0EA22r9rsZvg'
+- const siteInstagram = 'https://instagram.com/automaster77/'
+- const sitePagePrivacy = '/privacy-policy.html'
+- const routeYandexMap = 'https://yandex.ru/maps/213/moscow/?rtext=~55.865940%2C37.483373&rtt=auto&ruri=~ymapsbm1%3A%2F%2Forg%3Foid%3D122631074075&z=16'
+- const routeGoogleMap = 'https://www.google.com/maps/dir//%D0%90%D0%B2%D1%82%D0%BE%D0%BC%D0%B0%D1%81%D1%82%D0%B5%D1%8077,+%D0%91%D0%B5%D0%BB%D0%BE%D0%BC%D0%BE%D1%80%D1%81%D0%BA%D0%B0%D1%8F+%D1%83%D0%BB.,+%D0%B4.+40,+%D0%9C%D0%BE%D1%81%D0%BA%D0%B2%D0%B0,+125445/@55.8160802,37.5419889,10z'
+
+-
+  const siteNav = [
+    {url: 'index.html', name: 'Главная'},
+    {url: 'services.html', name: 'Услуги', hasChildren: 'menu-item-has-children', submenu: [
+      {url: 'pdr.html', name: 'Удаление вмятин без покраски'},
+      {url: 'painting.html', name: 'Локальная покраска'},
+      {url: 'polishing.html', name: 'Полировка кузова'},
+      {url: 'glass-repair.html', name: 'Ремонт сколов и трещин на стекле'},
+    ]},
+    {url: 'blog.html', name: 'Блог'},
+    {url: 'contacts.html', name: 'Контакты'},
+  ]
+
+-
+  const services = [
+    {
+      name: 'Удаление вмятин',
+      text: 'Технология удаления вмятин без повреждения лакокрасочного покрытия.',
+      src: 'usluga-pdr.jpg',
+      url: `${siteNav[1].submenu[0].url}`,
+    },
+    {
+      name: 'Покраска',
+      text: 'Локальная покраска элементов кузова автомобилей.',
+      src: 'usluga-pokraska.jpg',
+      url: `${siteNav[1].submenu[1].url}`,
+    },
+    {
+      name: 'Полировка',
+      text: 'Полировка кузова машины поможет вернуть ему идеальное состояние.',
+      src: 'usluga-polirovka.jpg',
+      url: `${siteNav[1].submenu[2].url}`,
+    },
+    {
+      name: 'Удаление сколов',
+      text: 'Ремонт сколов на лобовом стекле. Остановка продвижения трещин.',
+      src: 'usluga-remont-skolov.jpg',
+      url: `${siteNav[1].submenu[3].url}`,
+    },
+  ]
+
+-
+  const articles = [
+    {
+      title: 'Рабочий день мастера по технологии PDR',
+      src: 'rabochiy-den-pdr-mastera.jpg',
+      video: 'ZdH7Dh4mXKw',
+      date: '21 мая 2020',
+      category: 'Видео',
+      desc: 'Удаление вмятин PDR-крючками на автомобилях Nissan Navara, BMW X5 и BMW 4. Это первое пилотное видео в котором показываю как я выпрямляю вмятины крючками на автомобилях. Дальше буду выкладывать более подробные видео, рассказывая об особенностях специальности и секретах.',
+      url: 'rabochiy-den-pdr-mastera.html'
+    },
+    {
+      title: 'Ещё статья 1',
+      src: 'rabochiy-den-pdr-mastera.jpg',
+      video: 'ZdH7Dh4mXKw',
+      date: '21 мая 2020',
+      category: 'Видео',
+      desc: 'Удаление вмятин PDR-крючками на автомобилях Nissan Navara, BMW X5 и BMW 4. Это первое пилотное видео в котором показываю как я выпрямляю вмятины крючками на автомобилях. Дальше буду выкладывать более подробные видео, рассказывая об особенностях специальности и секретах.',
+      url: 'rabochiy-den-pdr-mastera.html'
+    },
+    {
+      title: 'Ещё статья 2',
+      src: 'rabochiy-den-pdr-mastera.jpg',
+      video: 'ZdH7Dh4mXKw',
+      date: '21 мая 2020',
+      category: 'Видео',
+      desc: 'Удаление вмятин PDR-крючками на автомобилях Nissan Navara, BMW X5 и BMW 4. Это первое пилотное видео в котором показываю как я выпрямляю вмятины крючками на автомобилях. Дальше буду выкладывать более подробные видео, рассказывая об особенностях специальности и секретах.',
+      url: 'rabochiy-den-pdr-mastera.html'
+    },
+    {
+      title: 'Ещё статья 3',
+      src: 'rabochiy-den-pdr-mastera.jpg',
+      video: 'ZdH7Dh4mXKw',
+      date: '21 мая 2020',
+      category: 'Видео',
+      desc: 'Удаление вмятин PDR-крючками на автомобилях Nissan Navara, BMW X5 и BMW 4. Это первое пилотное видео в котором показываю как я выпрямляю вмятины крючками на автомобилях. Дальше буду выкладывать более подробные видео, рассказывая об особенностях специальности и секретах.',
+      url: 'rabochiy-den-pdr-mastera.html'
+    },
+    {
+      title: 'Удаление вмятины без покраски на Seat Ibiza PDR-крючками',
+      src: 'vypryamleniye-vmyatin-na-seat-Ibiza.jpg',
+      video: 'BCHpg2tuNU0',
+      date: '24 мая 2020',
+      category: 'Видео',
+      desc: 'Удаление трёх небольших вмятин на дверях кузова автомобиля Seat Ibiza. Без покраски при помощи pdr-крючков.',
+      url: 'vypryamleniye-vmyatin-na-seat-Ibiza.html'
+    },
+    {
+      title: 'Удаление вмятины на Toyota Rav 4 без покраски',
+      src: 'vypryamlyayu-vmyatinu-na-toyota-rav-4.jpg',
+      video: '5lo3qdz-Iq0',
+      date: '28 мая 2020',
+      category: 'Видео',
+      desc: 'Удаление pdr-крючками большой вмятины на багажнике автомобиля Тойота Рав4. Смотрите в видео весь процесс работы мастера по выпрямлению вмятины.',
+      url: 'vypryamlyayu-vmyatinu-na-toyota-rav-4.html'
+    },
+    {
+      title: 'Выпрямление помятой крыши и капота на Ладе Ларгус',
+      src: 'pomyata-krysha-na-lade-largus.jpg',
+      video: 'iktaUvixL9I',
+      date: '31 мая 2020',
+      category: 'Видео',
+      desc: 'Выравниваю pdr-крючками крышу и капот после тяжёлого груза на автомобиле Лада Ларгус.',
+      url: 'pomyata-krysha-na-lade-largus.html'
+    },
+    {
+      title: 'Удаление вмятин на трёх автомобилях Dodge Ram',
+      src: 'udalyayu-vmyatiny-na-dodge.jpg',
+      video: 'mYcaOgfoGec',
+      date: '7 июня 2020',
+      category: 'Видео',
+      desc: 'Небольшие вмятины на авто марки Dodge Ram, на двери, стойке и капоте. В видео удаляю вмятины pdr-крючками и клеевой технологии.',
+      url: 'udalyayu-vmyatiny-na-dodge.html'
+    },
+    {
+      title: 'Удаление вмятины без покраски на мотоцикле Honda Shadow',
+      src: 'udaleniye-vmyatiny-na-honda-shadow.jpg',
+      video: 'fLvopvjl9Mw',
+      date: '14 июня 2020',
+      category: 'Видео',
+      desc: 'Удаление вмятины без покраски на бачке мотоцикла Honda Shadow при помощи клеевой технологии и обратного молотка.',
+      url: 'udaleniye-vmyatiny-na-honda-shadow.html'
+    },
+    {
+      title: 'Выпрямление вмятин на Mercedes E и Toyota Hilux PDR-крючками',
+      src: 'vypryamleniye-vmyatin-na-mercedes-e-i-toyota-hilux.jpg',
+      video: 'xmUAsprW9LU',
+      date: '21 июня 2020',
+      category: 'Видео',
+      desc: 'Выпрямление вмятины на заднем крыле Mercedes E и несколько вмятин на капоте Toyota Hilux.',
+      url: 'vypryamleniye-vmyatin-na-mercedes-e-i-toyota-hilux.html'
+    },
+    {
+      title: 'Удаление 4 вмятин на капоте Toyota Supra',
+      src: 'vypryamleniye-vmyatin-na-kapote-toyota-supra.jpg',
+      video: 'zZTbRGZ066c',
+      date: '2 июля 2020',
+      category: 'Видео',
+      desc: 'Удаление четырех пологих вмятин на капоте Toyota Supra.',
+      url: 'vypryamleniye-vmyatin-na-kapote-toyota-supra.html'
+    },
+    {
+      title: 'Выпрямление помятых дверей на Kia Soul PDR-крючками',
+      src: 'vypryamleniye-dverey-kia-soul.jpg',
+      video: 'JiwtNsV-4t8',
+      date: '12 июля 2020',
+      category: 'Видео',
+      desc: 'Выпрямление дверей на автомобиле Kia Soul, помятых от взрыва покрышки у грузовика. На передней двери выпрямил вмятину без покраски. Заднюю дверь выпрямил для покраски. При работе использовал: обратные молотки, клеевый пистолет и pdr-крючки.',
+      url: 'vypryamleniye-dverey-kia-soul.html'
+    },
+    {
+      title: 'Удаление вмятин на Toyota Fortuner',
+      src: 'udaleniye-vmyatin-na-kryshe-toyota-fortuner.jpg',
+      video: 'XHRCoMJryYA',
+      date: '19 июля 2020',
+      category: 'Видео',
+      desc: 'Удаление без покраски двух обширных вмятин на автомобиле Тойота Фортунер при помощи клеевой технологии и pdr-крючков.',
+      url: 'udaleniye-vmyatin-na-kryshe-toyota-fortuner.html'
+    },
+  ]

@@ -1,0 +1,252 @@
+ymaps {
+
+  &[class$="balloon__content"] > ymaps:first-child {
+    height: auto !important;
+  }
+
+  &[class$="-balloon__close-button"] {
+    width: 12px;
+    height: 12px;
+    padding: 4px;
+    margin: 6px;
+    background-size: 12px 12px;
+  }
+
+  a[class$="-gototech"] {
+    display: none !important;
+  }
+}
+
+.balloon {
+
+}
+
+.balloon__wrapper {
+
+}
+
+.baloon__title {
+  font-size: 16px;
+  line-height: 20px;
+  font-family: $font-family-base;
+  color: #196dff;
+  margin-top: 0;
+  margin-bottom: 4px;
+
+  a {
+    text-decoration: none;
+    color: inherit;
+
+    &:hover {
+      color: $color-primary;
+    }
+  }
+}
+
+.baloon__categories {
+  font-size: 12px;
+  line-height: 14px;
+  color: #999999;
+  margin: 4px 0 16px;
+}
+
+.baloon__contacts-view,
+.baloon__stops {
+  list-style: none;
+  margin: 0;
+  margin-bottom: 16px;
+  padding: 0;
+
+  a {
+    text-decoration: none;
+    color: inherit;
+
+    &:hover {
+      color: $color-primary;
+    }
+  }
+}
+
+.baloon__contacts-view {
+
+}
+
+.baloon__contacts-item {
+  display: flex;
+  align-items: flex-start;
+  font-size: 14px;
+  line-height: 16px;
+  margin-bottom: 4px;
+  padding: 4px 0;
+
+  svg {
+    width: 16px!important;
+    height: 16px!important;
+    padding: 0 4px;
+    color: #ccc;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    margin-right: 8px;
+  }
+}
+
+.baloon__contacts-item--address {
+
+}
+
+.baloon__contacts-item--phone {
+
+}
+
+.baloon__contacts-item--email {
+
+}
+
+.baloon__stops {
+
+}
+
+.baloon__stop {
+  font-size: 14px;
+  line-height: 16px;
+  display: flex;
+  align-items: center;
+  margin-bottom: 4px;
+
+  a {
+    display: flex;
+    align-items: flex-end;
+    margin: 0 6px;
+
+    .icon {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 16px;
+      height: 16px;
+      background-position: 50%;
+
+      svg {
+        width: 24px;
+        height: 24px;
+      }
+    }
+
+    &:hover path {
+      fill: $color-primary;
+    }
+  }
+}
+
+.baloon__stop-icon {
+  display: block;
+  width: 24px;
+  height: 24px;
+  margin-right: 6px;
+}
+
+.baloon__metro-name {
+
+}
+
+.balloon__distance {
+  display: inline-block;
+}
+
+.balloon__business-buttons {
+  display: flex;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  margin-bottom: 16px;
+}
+
+.balloon__button {
+  display: inline-block;
+  font-size: 14px;
+  line-height: 16px;
+  text-decoration: none;
+  color: #f3f6fc;
+  background-color: #196dff;
+  border-radius: 8px;
+  padding: 8px 25px;
+  transition: background-color 0.25s ease;
+
+  &:focus,
+  &:hover {
+    text-decoration: none;
+    color: #f3f6fc;
+    background-color: #3b83ff;
+  }
+
+  &--secondary {
+    color: #196dff;
+    background-color: #f3f6fc;
+    margin-right: 8px;
+    margin-bottom: 5px;
+
+    &:focus,
+    &:hover {
+      color: #196dff;
+      background-color: #d3e1fc;
+    }
+  }
+}
+
+.balloon__taxy {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  justify-content: flex-start;
+}
+
+.balloon__taxy-img {
+  width: 16px;
+  height: 16px;
+  margin-right: 6px;
+  margin-left: 2px;
+}
+
+.balloon__taxy-link {
+  font-size: 12px;
+  line-height: 18px;
+  text-decoration: none;
+  color: #196dff;
+
+  &:hover {
+    text-decoration: none;
+    color: $color-primary;
+  }
+}
+
+@media (min-width: 380px) {
+  .balloon__button {
+    padding-right: 32px;
+    padding-left: 32px;
+  }
+
+  .balloon__button--secondary {
+    margin-bottom: 0;
+  }
+}
+
+@media (min-width: $grid-breakpoints-md) {
+  .balloon {
+    max-width: 240px;
+  }
+
+  .balloon__button--secondary {
+    margin-bottom: 5px;
+  }
+}
+
+@media (min-width: 840px) {
+  .balloon {
+    max-width: none;
+  }
+
+  .balloon__button--secondary {
+    margin-bottom: 0;
+  }
+}

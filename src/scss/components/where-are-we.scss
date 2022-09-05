@@ -1,0 +1,147 @@
+.where-are-we {
+  position: relative;
+}
+
+.where-are-we__map {
+  width: 100%;
+  height: 420px;
+  background-color: #fcfcf7;
+  background-image: url("../images/map.jpg");
+  background-size: auto;
+  background-position: center -80px;
+  background-repeat: no-repeat;
+}
+
+.where-are-we__route {
+  position: absolute;
+  bottom: 35px;
+  right: 5px;
+  width: 200px;
+  height: auto;
+  z-index: 1;
+  background-color: #ffffff;
+  border: 3px solid #ffffff;
+  padding: 0;
+  box-sizing: content-box;
+  box-shadow: 0 0 12px 0 rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+
+  img {
+    display: block;
+    width: 200px;
+    height: 111px;
+  }
+
+  &:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #ffffff;
+    opacity: 0;
+    transition: opacity $transition-time ease;
+  }
+
+  &:focus {
+    outline-width: 3px;
+    outline-offset: -3px;
+  }
+
+  &:hover:after {
+    opacity: 0.15;
+  }
+}
+
+@media (min-width: 354px) {
+  .where-are-we__map {
+    height: 582px;
+    background-position: center top;
+  }
+
+  .where-are-we__route {
+    right: auto;
+    left: 5px;
+    width: 235px;
+
+    img {
+      width: 235px;
+      height: 131px;
+    }
+  }
+}
+
+// @media (min-width: $grid-breakpoints-sm) {
+//   .where-are-we__route {
+//     // left: 15px;
+//   }
+// }
+
+@media (min-width: $grid-breakpoints-md) {
+  .where-are-we {
+    height: 582px;
+    min-height: 582px;
+  }
+
+  // .where-are-we__wrapper {
+
+  // }
+
+  .where-are-we__content {
+    position: absolute;
+    top: 0;
+    right: 15px;
+    width: 390px;
+    height: 100%;
+    box-shadow: 0 5px 30px 0 rgba(0, 0, 0, 0.2);
+    z-index: 1;
+  }
+
+  .where-are-we__content {
+    height: inherit;
+    padding-top: 45px;
+    padding-right: 30px;
+    padding-left: 30px;
+  }
+
+  .where-are-we__col--map {
+    position: static;
+  }
+
+  .where-are-we__map {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 582px;
+    background-image: url("../images/large/map.jpg");
+  }
+}
+
+@media (min-width: $grid-breakpoints-lg) {
+  .where-are-we__container {
+    max-width: 1350px;
+    margin: 0 auto;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+
+@media (min-width: $grid-breakpoints-full) {
+  .where-are-we__content {
+    left: 50%;
+    transform: translateX(266px);
+  }
+
+  .where-are-we__route {
+    left: 50%;
+    transform: translateX(-654px);
+  }
+}
+
+@media (min-width: 1840px) {
+  .where-are-we__route {
+    bottom: 8px;
+  }
+}

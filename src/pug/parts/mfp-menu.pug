@@ -1,0 +1,24 @@
+.mfp-menu#mfp-menu
+  .mfp-menu__wrapper
+    .mfp-menu__content
+      .mfp-menu__nav
+        nav.nav.mobile-nav#site-nav-mobile
+          +nav(siteNav, url)
+      .mfp-menu__footer
+        .mfp-menu__contacts
+          a.mfp-menu__phone(href= sitePhoneLink) #{sitePhone}
+          .mfp-menu__messengers
+            a.mfp-menu__item.mfp-menu__item--whatsapp(href= siteWhatsapp, aria-label="Мы в WhatsApp")
+              +icon-mono('whatsapp-outline')(width="22", height="22")
+            a.mfp-menu__item.mfp-menu__item--telegram(href= siteTelegram, aria-label="Мы в Telegram")
+              +icon-mono('telegram')(width="22", height="22")
+          button.mfp-menu__callback.btn.btn--stroke.btn--white.btn--small Обратный звонок
+        .mfp-menu__address
+          | #{siteAddress}
+        .mfp-menu__clock
+          +icon-mono('clock')(width="22", height="22")
+          .mfp-menu__working-hours
+            span #{siteWorkingHours.weekdays};
+            span #{siteWorkingHours.saturday};
+            span #{siteWorkingHours.sunday}
+  .mfp-menu__bg#mfp-menu-bg

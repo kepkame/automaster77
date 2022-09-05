@@ -1,0 +1,43 @@
+// .nav {
+
+// }
+
+// .mobile-nav {
+
+// }
+
+.nav-menu {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+// .menu-item {
+
+// }
+
+.nav-top-link {
+  line-height: 28px;
+  text-decoration: none;
+  color: $color-text-primary;
+
+  &:focus,
+  &:hover {
+    color: $color-text-primary;
+  }
+}
+
+.menu-item-has-children {
+  position: relative;
+
+  .icon--arrow {
+    fill: $color-text-primary;
+    transform: rotate(90deg);
+  }
+}
+
+.sub-menu {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
