@@ -1,0 +1,132 @@
+.service-about {
+  color: $color-text-secondary;
+}
+
+.service-about__wrapper {
+
+}
+
+.service-about__col {
+
+  &:first-child {
+    background-color: $color-bg-additional;
+    padding: 57px 15px 59px;
+
+    p:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &:last-child {
+    background-color: $color-bg-secondary;
+    padding: 60px 15px;
+  }
+}
+
+.service-about__title {
+  margin-top: 0;
+
+  .framed-content__wrapper & {
+    margin-bottom: 17px;
+  }
+}
+
+@media (min-width: $grid-breakpoints-md) {
+  .service-about__col {
+
+    &:first-child {
+      padding: 86px 25px 90px;
+    }
+
+    &:last-child {
+      padding: 90px 25px;
+    }
+  }
+}
+
+@media (min-width: $grid-breakpoints-lg) {
+  .service-about__wrapper {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+  }
+
+  .service-about__col {
+
+    &:first-child {
+      flex-basis: 59.16%;
+      padding-right: 30px;
+      padding-left: 25px;
+
+      .service-about__content {
+        max-width: 650px;
+      }
+    }
+
+    &:last-child {
+      display: flex;
+      align-items: center;
+      min-height: 100%;
+      flex-basis: 40.84%;
+      padding: 0 25px 0 30px;
+
+      .service-about__content {
+        width: 100%;
+        max-width: 453px;
+        margin-left: auto;
+      }
+    }
+  }
+}
+
+@media (min-width: $grid-breakpoints-xl) {
+  .service-about__col {
+
+    &:first-child {
+      flex-basis: 57.29%;
+      padding: 117px 25px 115px;
+    }
+
+    &:last-child {
+      flex-basis: 42.71%;
+
+      .framed-content__wrapper {
+        max-width: 320px;
+      }
+    }
+  }
+}
+
+@media (min-width: $grid-breakpoints-full) {
+  .service-about__col {
+
+    &:first-child {
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-end;
+      padding-right: 110px;
+    }
+
+    &:last-child {
+      padding-left: 0;
+
+      .service-about__content {
+        margin-left: 97px;
+      }
+    }
+  }
+}
+
+@media (min-width: 1440px) {
+  .service-about__col {
+
+    &:first-child {
+      flex-basis: 55.6%;
+    }
+
+    &:last-child {
+      flex-basis: 44.4%;
+    }
+  }
+}
+

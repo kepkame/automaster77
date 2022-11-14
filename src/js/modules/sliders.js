@@ -135,4 +135,153 @@ export default () => {
 
   // sliderPhonePhotos.controller.control = sliderPhoneThumb;
   // sliderPhoneThumb.controller.control = sliderPhonePhotos;
+
+  const sliderElement = document.querySelector('.slider-double');
+  let swiperSlider = {};
+  let sliderType = window.innerWidth < 992 ? 'mobile' : 'desktop';
+
+  function initSlider(type) {
+    let sliderSettings = {};
+    if (type === 'mobile') {
+      sliderSettings = {
+        loop: true,
+        spaceBetween: 15,
+        speed: 400,
+        grabCursor: true,
+        slidesPerView: 'auto',
+        watchSlidesProgress: true,
+        observer: true,
+        resizeObserver: true,
+        keyboard: {
+          enabled: true,
+          onlyInViewport: true,
+        },
+
+        pagination: {
+          el: '.work-examples__pagination--mobile .work-examples__count',
+          type: 'fraction',
+          /* eslint-disable-next-line */
+          renderFraction: function (currentClass, totalClass) {
+            /* eslint-disable-next-line */
+            return '<span class="work-examples__current ' + currentClass + '"></span> / <span class="work-examples__total ' + totalClass + '"></span>';
+          },
+        },
+
+        // Navigation arrows
+        navigation: {
+          nextEl: '.work-examples__btn--next',
+          prevEl: '.work-examples__btn--prev',
+        },
+
+        // описание настроек для мобильной вариации.
+      };
+    } else {
+      sliderSettings = {
+        loop: false,
+        spaceBetween: 15,
+        speed: 400,
+        grabCursor: true,
+        slidesPerView: 'auto',
+        watchSlidesProgress: true,
+        keyboard: {
+          enabled: true,
+          onlyInViewport: true,
+        },
+
+        pagination: {
+          el: '.work-examples__pagination--desktop .work-examples__count',
+          type: 'fraction',
+          /* eslint-disable-next-line */
+          renderFraction: function (currentClass, totalClass) {
+            /* eslint-disable-next-line */
+            return '<span class="work-examples__current ' + currentClass + '"></span> / <span class="work-examples__total ' + totalClass + '"></span>';
+          },
+        },
+
+        // Navigation arrows
+        navigation: {
+          nextEl: '.work-examples__btn--next',
+          prevEl: '.work-examples__btn--prev',
+        },
+
+        // описание настроек для десктопной вариации.
+      };
+    } // конец if-else
+    // Проверяем, есть ли в объекте слайдера метод destroy, и если есть - вызываем его.
+    if (swiperSlider.destroy && typeof swiperSlider.destroy === 'function') {
+      swiperSlider.destroy(); // Возможно, если в круглые скобки передать true то будет лучше.
+    }
+    swiperSlider = new Swiper(sliderElement, sliderSettings);
+  }
+
+  initSlider(sliderType);
+
+  window.addEventListener('resize', () => {
+    if (window.innerWidth < 992 && sliderType == 'desktop') {
+      sliderType = 'mobile';
+      initSlider(sliderType);
+    } else if (window.innerWidth >= 992 && sliderType == 'mobile') {
+      sliderType = 'desktop';
+      initSlider(sliderType);
+    }
+  });
+
+  // ИЗНАЧАЛЬНЫЙ КОД СЛАЙДЕРА С ДВУМЯ СЛАЙДАМИ
+  // const sliderDouble = new Swiper('.slider-double', {
+  //   loop: true,
+  //   spaceBetween: 15,
+  //   speed: 400,
+  //   grabCursor: true,
+  //   slidesPerView: 'auto',
+  //   watchSlidesProgress: true,
+  //   observer: true,
+  //   resizeObserver: true,
+  //   keyboard: {
+  //     enabled: true,
+  //     onlyInViewport: true,
+  //   },
+
+  //   pagination: {
+  //     el: '.work-examples__pagination--mobile .work-examples__count',
+  //     type: 'fraction',
+  //     /* eslint-disable-next-line */
+  //     renderFraction: function (currentClass, totalClass) {
+  //       /* eslint-disable-next-line */
+  //       return '<span class="work-examples__current ' + currentClass + '"></span> / <span class="work-examples__total ' + totalClass + '"></span>';
+  //     },
+  //   },
+
+  //   // Navigation arrows
+  //   navigation: {
+  //     nextEl: '.work-examples__btn--next',
+  //     prevEl: '.work-examples__btn--prev',
+  //   },
+
+  //   breakpoints: {
+  //     // when window width is >= 992px
+  //     992: {
+  //       loop: false,
+  //       spaceBetween: 15,
+  //       grabCursor: true,
+  //       slidesPerView: 'auto',
+  //       watchSlidesProgress: true,
+
+  //       pagination: {
+  //         el: '.work-examples__pagination--desktop .work-examples__count',
+  //         type: 'fraction',
+  //         /* eslint-disable-next-line */
+  //         renderFraction: function (currentClass, totalClass) {
+  //           /* eslint-disable-next-line */
+  //           return '<span class="work-examples__current ' + currentClass + '"></span> / <span class="work-examples__total ' + totalClass + '"></span>';
+  //         },
+  //       },
+
+  //       // Navigation arrows
+  //       navigation: {
+  //         nextEl: '.work-examples__btn--next',
+  //         prevEl: '.work-examples__btn--prev',
+  //       },
+  //     },
+  //   },
+  // });
 };

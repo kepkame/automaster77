@@ -7,15 +7,15 @@ mixin hero(data)
             .hero__desc
               h1.hero__title= data.title
               p.hero__subtitle= data.subTitle
-              button.hero__btn.btn.btn-booking Записаться на ремонт
+              if data.isBenefits == true
+                .hero__benefits
+                  each item in data.benefits
+                    .hero__benefits-col(class=`hero__benefits-col--${item.icon}`)
+                      +icon-mono(`${item.icon}`)(width="32", height="32")
+                      span= item.text
+              button.hero__btn.btn.btn-booking #{data.textButton}
             .hero__dots
               .icon-dots
-          if data.isBenefits == true
-            .hero__benefits
-              each item in data.benefits
-                .hero__benefits-col(class=`hero__benefits-col--${item.icon}`)
-                  +icon-mono(`${item.icon}`)
-                  span= item.text
 
         .hero__col.hero__col--media
           +imgAdaptive(data.image)(class="hero__img", alt="Центр удаления вмятин Автомастер77")

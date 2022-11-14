@@ -1,0 +1,41 @@
+mixin serviceAboutFramed(data)
+  .service-about
+    .service-about__wrapper
+      .service-about__col
+        .service-about__content
+          h2.service-about__title.title-line.title-line--grey #{data.primaryTitle}
+          .service-about__description
+            each text in data.primaryDescription
+              p #{text}
+      .service-about__col
+        .service-about__content
+          .framed-content
+            .framed-content__wrapper
+              h2.service-about__title #{data.secondaryTitle}
+              p #{data.secondaryDescription}
+
+mixin serviceAboutImage(data)
+  .service-about
+    .service-about__wrapper
+      .service-about__col
+        .service-about__container
+          h2.title-line.title-line--grey #{data.title}
+          .service-about__description
+            each text in data.description
+              p #{text}
+      .service-about__col
+        .service-about__framed-content
+          //- block secContent
+
+mixin serviceAboutSlider(data)
+  .service-about
+    .service-about__wrapper
+      .service-about__col
+        .service-about__container
+          h2.title-line.title-line--grey #{data.title}
+          .service-about__description
+            each text in data.description
+              p #{text}
+      .service-about__col
+        .service-about__framed-content
+          //- block secContent

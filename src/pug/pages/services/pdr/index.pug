@@ -1,0 +1,162 @@
+-
+  const pdrHero = {
+    title: pageTitle,
+    subTitle: 'по инновационной технологии PDR',
+    textButton: 'Записаться на услугу',
+    isBenefits: true,
+    benefits: [
+      {icon: 'purse', text: 'от 1 500 ₽'},
+      {icon: 'clock-fast', text: 'от 30 минут'},
+    ],
+    image: 'hero-pdr.jpg',
+  }
+
+-
+  const pdrAdvantages = [
+    ['Профессиональное обслуживание', 'В нашем центре, специалисты успешно выпрямляют вмятины без покраски более 12 лет.'],
+    ['Оптимальная стоимость', 'Поддерживаем приемлемый уровень цен на все услуги при неизменно высоком качестве выполняемой работы.'],
+  ]
+
+-
+  const pdrAbout = {
+    primaryTitle: 'Paintless Dent Removal - это',
+    primaryDescription: [
+      'Технология удаления вмятин на автомобилях без повреждения лакокрасочного покрытия.',
+      'Не требует шлифовки, шпатлевки и покраски поврежденного участка. В большинстве случаев, после выпрямления вмятины, место повреждения визуально невозможно определить.',
+      'Время на ремонт вмятин занимает гораздо меньше, чем при стандартном кузовном ремонте, от 30 минут.',
+      'Деталь остается в своём оригинальной окрасе, тем самым Ваш автомобиль не переходит в разряд битых и окрашенных, и исключает не попадание в цвет, как при классическом ремонте с окрасом.',
+    ],
+    secondaryTitle: 'Когда применяется',
+    secondaryDescription: 'Удаление вмятин на автомобиле без покраски принесёт ожидаемый результат при условии отсутствия повреждения лакокрасочного покрытия автомобиля. Размер вмятины не влияет на качество её выпрямления.',
+  }
+
+-
+  const pdrAluminum = {
+    title: 'Ремонт деталей из алюминия',
+    description: [
+      'Вмятины на алюминиевой детали – это не приговор!',
+      'Ремонт алюминиевых деталей требует высокой квалификации мастера.',
+      'Наши специалисты, за счёт многолетней практики, спасут Вашу алюминиевую деталь, а вы сэкономите немалую сумму, которую могли отдать за покупку новой детали.',
+    ],
+    image: {
+      src: 'porsche-krasniy.jpg',
+      alt: 'Выпрямление вмятины на красном Porsche',
+      width: '650',
+      height: '480'
+    },
+  }
+
+-
+  const pdrWordExample = {
+    title: 'Примеры выполненных работ',
+    description: 'Наши мастера привели в идеальное состояние тысячи автомобилей.',
+    slider: [
+      {
+        src: 'dodge-ram-1500',
+        alt: 'Dodge RAM 1500',
+      },
+      {
+        src: 'lambordgini-gallardo',
+        alt: 'Lambordgini Gallardo',
+      },
+      {
+        src: 'mercedes-gelendwagen',
+        alt: 'Mercedes Gelendwagen',
+      },
+      {
+        src: 'toyota-camry',
+        alt: 'Toyota Camry',
+      },
+      {
+        src: 'mazda-6',
+        alt: 'Mazda 6',
+      },
+      {
+        src: 'bmw-3m',
+        alt: 'BMW 3M',
+      },
+      {
+        src: 'bmw-5-wagon',
+        alt: 'BMW 5 Wagon',
+      },
+      {
+        src: 'bmw-x4',
+        alt: 'BMW X4',
+      },
+      {
+        src: 'bmw-x6',
+        alt: 'BMW X6',
+      },
+      {
+        src: 'dodge-ram',
+        alt: 'Dodge RAM',
+      },
+      {
+        src: 'dodge-ram-1500-white',
+        alt: 'Dodge RAM 1500',
+      },
+      {
+        src: 'kia-optima',
+        alt: 'KIA Optima',
+      },
+      {
+        src: 'kia-optima-white',
+        alt: 'KIA Optima',
+      },
+      {
+        src: 'kia-rio',
+        alt: 'KIA Rio',
+      },
+      {
+        src: 'lexus-nx200',
+        alt: 'Lexus NX200',
+      },
+      {
+        src: 'mercedes-red',
+        alt: 'Mercedes',
+      },
+      {
+        src: 'mersedes-sl',
+        alt: 'Mercedes SL',
+      },
+      {
+        src: 'mersedes-vito',
+        alt: 'Mercedes Vito',
+      },
+      {
+        src: 'mitsubishi-outlander',
+        alt: 'Mitsubishi Outlander',
+      },
+      {
+        src: 'toyota-rav-4',
+        alt: 'Toyota RAV 4',
+      },
+      {
+        src: 'toyota-supra',
+        alt: 'Toyota Supra',
+      },
+    ],
+  }
+
+-
+  const pdrTablePrices = [
+    ['до 3 см.', 'от 1 500 ₽', false],
+    ['3-5 см.', 'от 2 500 ₽', false],
+    ['5-7 см.', 'от 4 000 ₽', false],
+    ['7-5 см.', 'от 4 000 ₽', false],
+    ['10-20 см.', 'от 7 000 ₽', false],
+    ['от 20 см.', 'оценка стоимости при осмотре мастером', true],
+  ]
+
++hero(pdrHero)
++advantages(pdrAdvantages)
++serviceAboutFramed(pdrAbout)
++sectionFrame(pdrAluminum)
++freeConsultation()
++workExamples(pdrWordExample)
++sectionVideo(articles)
++section-prices(pdrTablePrices)
++estimate(title)
++services()
+  +servicesList(services, siteNav[1].submenu[0].url)
++whereAreWe

@@ -119,7 +119,7 @@
   }
 
   .about-us__container {
-    max-width: 1350px;
+    max-width: $container-max-width;
     margin: 0 auto;
     padding-left: 20px;
     padding-right: 20px;
@@ -130,7 +130,7 @@
     left: -120px;
     flex: 0 0 calc(68.47% + 120px);
     padding-right: 247px;
-    padding-left: 120px;
+    padding-left: 125px;
   }
 
   .about-us__col--media {
@@ -193,7 +193,7 @@
 //   }
 
 //   .about-us__container {
-//     max-width: 1350px;
+//     max-width: $container-max-width;
 //     margin: 0 auto;
 //     padding-left: 20px;
 //     padding-right: 20px;

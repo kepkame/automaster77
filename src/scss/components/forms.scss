@@ -34,7 +34,7 @@ textarea {
   display: inline-block;
   font-size: inherit;
   line-height: inherit;
-  color: mix($color-text-additional, #000000, 88);
+  color: $color-text-acceptance;
   background-color: #ffffff;
   border: none;
   margin-right: 10px;
@@ -67,7 +67,7 @@ textarea {
   display: block;
   font-size: 14px;
   line-height: 18px;
-  color: mix($color-text-additional, #000000, 88);
+  color: $color-text-acceptance;
   margin-top: 5px;
 
   span {
@@ -103,14 +103,15 @@ textarea {
   max-width: 302px;
   font-size: 12px;
   line-height: 14px;
-  color: mix($color-text-additional, #000000, 88);
+  color: $color-text-acceptance;
 
   a {
-    text-decoration: underline;
+    font-weight: 700;
     color: inherit;
 
     &:focus,
     &:hover {
+      text-decoration: underline;
       color: $color-primary-hover;
     }
   }
@@ -129,7 +130,7 @@ textarea {
 }
 
 .upload__file-name {
-  color: mix($color-text-additional, #000000, 88);
+  color: $color-text-acceptance;
 }
 
 .upload__notice-error {
@@ -145,6 +146,78 @@ textarea {
   padding: 0 12px;
   box-sizing: border-box;
   margin-top: 10px;
+}
+
+// Form phone inline
+.form-phone-inline {
+
+}
+
+.free-consultation__row {
+  display: flex;
+  flex-flow: row nowrap;
+  margin-bottom: 10px;
+}
+
+input.form-phone-inline__input {
+  max-width: 220px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+}
+
+.form-phone-inline__submit {
+
+}
+
+.simple-form__agree {
+  display: none;
+}
+
+.wpcf7-form-control-wrap {
+
+}
+
+.agree {
+
+}
+
+.wpcf7-form-control {
+
+}
+
+.wpcf7-acceptance {
+
+}
+
+.invert {
+
+}
+
+.wpcf7-list-item {
+
+}
+
+.form-phone-inline__acceptance {
+  font-size: 12px;
+  line-height: 16px;
+  color: $color-text-acceptance;
+  margin: 0;
+
+  a {
+    font-weight: bold;
+    color: inherit;
+
+    &:focus,
+    &:hover {
+      color: $color-primary-hover;
+    }
+  }
+}
+
+@media (max-width: 360px) {
+  input.form-phone-inline__input {
+    padding: 4px;
+  }
 }
 
 @media (min-width: 360px) {
@@ -218,7 +291,7 @@ textarea {
       left: 50%;
       width: 22px;
       height: 22px;
-      fill: mix($color-text-additional, #000000, 88);
+      fill: $color-text-acceptance;
       transform: translate(-50%, -50%);
     }
   }

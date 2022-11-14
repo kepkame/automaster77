@@ -1,0 +1,26 @@
+mixin sectionFrame(data, reverse = false)
+  .section-frame(class= {'section-frame--reverse': side === true})
+    .section-frame__wrapper
+      .section-frame__frame
+      .section-frame__col.section-frame__col--text
+        .section-frame__content
+          h2.section-frame__title.title-line #{data.title}
+          .section-frame__description
+            each text in data.description
+              p #{text}
+      .section-frame__col.section-frame__col--media
+        +img(data.image.src, data.image.alt)(class="section-frame__img", width= data.image.width, height= data.image.height)
+
+
+mixin sectionFrameList(data, reverse = false)
+  .section-frame(class= {'section-frame--reverse': reverse === true})
+    .section-frame__wrapper
+      .section-frame__frame
+      .section-frame__col.section-frame__col--text
+        .section-frame__content
+          h2.section-frame__title.title-line #{data.title}
+          ol.section-frame__list
+            each item in data.list
+              li.section-frame__item #{item}
+      .section-frame__col.section-frame__col--media
+        +img(data.image.src, data.image.alt)(class="section-frame__img", width= data.image.width, height= data.image.height)

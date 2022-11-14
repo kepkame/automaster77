@@ -1,0 +1,21 @@
+.framed-content {
+  border: 15px solid $color-bg-additional;
+  padding: 42px 20px 30px;
+  box-sizing: border-box;
+}
+
+.framed-content__wrapper {
+  max-width: 650px;
+  margin: 0 auto;
+}
+
+@media (min-width: $grid-breakpoints-md) {
+  .framed-content {
+    padding-top: 46px;
+    padding-bottom: 33px;
+  }
+}
+
+@media (min-width: $grid-breakpoints-lg) {
+
+}

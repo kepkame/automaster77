@@ -1,0 +1,12 @@
+mixin freeConsultation()
+  .free-consultation
+    .free-consultation__container
+      .free-consultation__wrapper
+        .free-consultation__col.free-consultation__col--text
+          h2.free-consultation__title.title-line.title-line--grey Получить бесплатную консультацию
+          p Оставьте свой номер телефона и мастер свяжется с Вами в ближайшее время.
+          +formPhoneInline('free-consultation__form')
+        .free-consultation__col.free-consultation__col--media
+          +imgAdaptive('iphone-call-automaster77.png', 'Звонок на iPhone', 'images/common/placeholder.png', '576')(class="free-consultation__img", width="148", height="310")
+        .free-consultation__dots
+          .icon-dots

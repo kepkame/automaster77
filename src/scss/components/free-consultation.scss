@@ -1,0 +1,139 @@
+.free-consultation {
+  position: relative;
+  color: $color-text-secondary;
+  margin-bottom: 90px;
+}
+
+.free-consultation__container {
+
+}
+
+.free-consultation__wrapper {
+  position: relative;
+  @include container;
+  background-image: $color-bg-linear;
+  padding-top: 57px;
+  padding-bottom: 60px;
+}
+
+.free-consultation__col {
+
+}
+
+.free-consultation__col--text {
+
+}
+
+.free-consultation__title {
+  max-width: 340px;
+  margin-top: 0;
+}
+
+.free-consultation__form {
+
+}
+
+.free-consultation__col--media {
+  opacity: 0;
+  transition: opacity $transition-time ease;
+}
+
+.free-consultation__img {
+  position: absolute;
+  top: 60px;
+  right: 15px;
+  width: 60px;
+  height: auto;
+  transform: rotate(5.33deg);
+  transform-origin: top right;
+}
+
+.free-consultation__dots {
+  position: absolute;
+  top: -47px;
+  left: -15px;
+  width: 116px;
+  height: 116px;
+  z-index: -1;
+
+  .icon-dots {
+    width: 100%;
+    height: 100%;
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg width='28' height='28' viewBox='0 0 28 28' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M4 2C4 3.10059 3.10059 4 2 4C0.899407 4 0 3.10059 0 2C0 0.89941 0.899407 0 2 0C3.10059 0 4 0.89941 4 2Z' fill='%23363636'/%3e%3c/svg%3e");
+    background-size: 28px 28px;
+  }
+}
+
+@media (min-width: 340px) {
+  .free-consultation__col--media {
+    opacity: 1;
+  }
+}
+
+@media (min-width: $grid-breakpoints-sm) {
+  .free-consultation__wrapper {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: flex-start;
+    padding-top: 67px;
+    padding-bottom: 68px;
+  }
+
+  .free-consultation__col--text {
+    flex-basis: 73.46%;
+  }
+
+  .free-consultation__title {
+    max-width: none;
+  }
+
+  .free-consultation__form {
+    max-width: 361px;
+
+    .form-phone-inline__acceptance span {
+      display: block;
+    }
+  }
+
+  .free-consultation__col--media {
+    flex-basis: calc(148px + 60px);
+    max-width: calc(148px + 60px);
+    margin-left: auto;
+  }
+
+  .free-consultation__img {
+    position: relative;
+    display: block;
+    top: auto;
+    right: auto;
+    width: 148px;
+    margin-left: auto;
+    transform: rotate(0);
+  }
+}
+
+@media (min-width: $grid-breakpoints-md) {
+  .free-consultation__wrapper {
+    padding-right: 25px;
+    padding-left: 25px;
+  }
+}
+
+@media (min-width: $grid-breakpoints-lg) {
+  .free-consultation {
+    margin-bottom: 120px;
+  }
+
+  .free-consultation__container {
+    @include container-desktop;
+  }
+
+  .free-consultation__wrapper {
+    padding: 33px 120px 33px 90px;
+  }
+
+  .free-consultation__dots {
+    left: -64px;
+  }
+}

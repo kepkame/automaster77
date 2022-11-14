@@ -34,6 +34,7 @@
   color: $color-text-primary;
   background-color: $color-primary;
   padding: 30px;
+  z-index: 1;
 
   .services-list__card:nth-child(even) & {
     background-color: $color-border;
@@ -94,8 +95,14 @@
   }
 }
 
+.services-list__media,
+.services-list__img {
+  width: 100%;
+}
+
 .services-list__media {
   display: block;
+  overflow: hidden;
 
   &:focus {
     outline-width: 5px;
@@ -103,9 +110,13 @@
   }
 }
 
-.services-list__media,
 .services-list__img {
-  width: 100%;
+  transform: scale(1);
+  transition: transform $transition-time ease-out;
+
+  .services-list__media:hover & {
+    transform: scale(1.15);
+  }
 }
 
 @media (min-width: $grid-breakpoints-sm) {
@@ -144,6 +155,7 @@
 
 @media (min-width: $grid-breakpoints-md) {
   .section-services {
+    padding-top: 116px;
     margin-bottom: 120px;
   }
 }

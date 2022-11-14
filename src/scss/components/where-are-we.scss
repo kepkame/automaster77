@@ -121,10 +121,7 @@
 
 @media (min-width: $grid-breakpoints-lg) {
   .where-are-we__container {
-    max-width: 1350px;
-    margin: 0 auto;
-    padding-left: 20px;
-    padding-right: 20px;
+    @include container-desktop;
   }
 }
 

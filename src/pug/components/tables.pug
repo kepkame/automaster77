@@ -1,0 +1,12 @@
+mixin table(data, tableHead = false, nameClass = false)
+  table.table(class= (nameClass) ? nameClass : '')
+    if (tableHead)
+      thead.table__head
+        tr.table__row
+          th.table__cell #{tableHead[0]}
+          th.table__cell #{tableHead[1]}
+    tbody.table__body
+      each item in data
+        tr.table__row(class= (item[2]) ? 'table__row--full' : '')
+          td.table__cell #{item[0]}
+          td.table__cell #{item[1]}

@@ -1,0 +1,149 @@
+.section-frame {
+  padding-top: 90px;
+  padding-bottom: 90px;
+}
+
+.section-frame__wrapper {
+  position: relative;
+  padding: 60px 15px;
+}
+
+.section-frame__col {
+
+}
+
+.section-frame__col--text {
+  margin-bottom: 30px;
+}
+
+.section-frame__content {
+
+}
+
+.section-frame__title {
+  margin-top: 0;
+}
+
+.section-frame__description {
+
+  p:last-child {
+    margin: 0;
+  }
+}
+
+.section-frame__list {
+
+}
+
+.section-frame__item {
+
+}
+
+.section-frame__col--media {
+
+}
+
+.section-frame__img {
+  width: 100%;
+}
+
+.section-frame__frame {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 15px solid $color-border;
+  border-left-width: 0;
+  border-right-width: 0;
+  z-index: -1;
+}
+
+@media (min-width: $grid-breakpoints-md) {
+  .section-frame {
+    padding-right: 25px;
+    padding-left: 25px;
+  }
+
+  .section-frame__wrapper {
+    max-width: $container-max-width;
+    margin: 0 auto;
+    padding: 71px 65px 75px;
+  }
+
+  .section-frame__frame {
+    border-left-width: 15px;
+    border-right-width: 15px;
+  }
+}
+
+@media (min-width: $grid-breakpoints-lg) {
+  .section-frame {
+    padding-top: 120px;
+    padding-bottom: 120px;
+  }
+}
+
+@media (min-width: $grid-breakpoints-xl) {
+  .section-frame {
+    padding-right: 0;
+    padding-left: 0;
+  }
+
+  .section-frame__wrapper {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-start;
+    align-items: center;
+
+    padding-right: 75px;
+    padding-left: 25px;
+  }
+
+  .section-frame__col--text {
+    flex: 1 0 585px;
+    max-width: 585px;
+    margin-bottom: 0;
+    padding-left: 45px;
+    box-sizing: border-box;
+    order: 1;
+  }
+
+  .section-frame__col--media {
+    flex: 0 1 49.61%;
+    max-width: 650px;
+  }
+
+  .section-frame__frame {
+    width: calc(100% - 25px);
+    border-left-width: 0;
+  }
+}
+
+@media (min-width: $grid-breakpoints-full) {
+  .section-frame {
+    position: relative;
+
+    &:before,
+    &:after {
+      content: "";
+      position: absolute;
+      left: 0;
+      width: calc(50% - 675px);
+      height: 15px;
+      background-color: $color-border;
+    }
+
+    &:before {
+      top: 120px;
+    }
+
+    &:after {
+      bottom: 120px;
+    }
+  }
+
+  .section-frame__col--media {
+    flex: 0 0 650px;
+  }
+}

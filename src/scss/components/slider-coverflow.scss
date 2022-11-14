@@ -1,6 +1,5 @@
 .slider-coverflow {
-  padding-right: 15px;
-  padding-left: 15px;
+  @include container;
 }
 
 .no-js .slider-coverflow {
@@ -28,8 +27,7 @@
 
 // Slide
 // .slider-coverflow__card {
-  // padding-right: 15px;
-  // padding-left: 15px;
+  // @include container;
 // }
 
 // .slider-coverflow__inner {
@@ -86,8 +84,7 @@
 
 // Pagination
 .slider-coverflow__pagination {
-  padding-right: 15px;
-  padding-left: 15px;
+  @include container;
 
   &.swiper-pagination-bullets.swiper-pagination-horizontal {
     bottom: -47px;

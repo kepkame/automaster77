@@ -31,6 +31,18 @@ mixin imgAdaptive(src, altText = 'Фотография без описания',
     source(type="image/jpeg", media=`(min-width:${width}px)`, data-srcset=`images/large/${srcFirstPart}.jpg`, srcset=srcPlaceholder)
     img(class="lazy", data-srcset=`images/${srcFirstPart}.jpg`, src=srcPlaceholder, alt= altText)&attributes(attributes)
 
+mixin imgAdaptiveWorkExamples(src, altText = 'Фотография без описания', srcPlaceholder="", width = '767')
+  - const srcParts = src.split('.')
+  - const [srcFirstPart, extname] = srcParts
+
+  picture
+    source(type="image/avif", media=`(min-width:${width}px)`, data-srcset=`images/work-example/medium/${srcFirstPart}.avif`, srcset="images/common/placeholder-work-examples-desktop.svg")
+    source(type="image/avif", data-srcset=`images/work-example/${srcFirstPart}.avif`, srcset="images/common/placeholder-work-examples-mobile.svg")
+    source(type="image/webp", media=`(min-width:${width}px)`, data-srcset=`images/work-example/medium/${srcFirstPart}.webp`, srcset="images/common/placeholder-work-examples-desktop.svg")
+    source(type="image/webp", data-srcset=`images/work-example/${srcFirstPart}.webp`, srcset="images/common/placeholder-work-examples-mobile.svg")
+    source(type="image/jpeg", media=`(min-width:${width}px)`, data-srcset=`images/work-example/medium/${srcFirstPart}.jpg`, srcset= "images/common/placeholder-work-examples-desktop.svg")
+    img(class="lazy", data-srcset=`images/work-example/${srcFirstPart}.jpg`, src= "images/common/placeholder-work-examples-mobile.svg", alt= altText)&attributes(attributes)
+
 mixin img2x(src, altText = 'Фотография без описания', srcPlaceholder="images/common/placeholder.png")
   - const srcParts = src.split('.')
   - const [srcFirstPart, extname] = srcParts

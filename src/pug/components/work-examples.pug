@@ -1,0 +1,47 @@
+mixin workExamples(data)
+  section.work-examples
+    .work-examples__container
+      .work-examples__wrapper
+        .work-examples__frame
+        .work-examples__content
+          .work-examples__col.work-examples__col--text
+            .work-examples__inner
+              h2.work-examples__title.title-line #{data.title}
+              p.work-examples__description #{data.description}
+              .work-examples__pagination.work-examples__pagination--desktop
+                .work-examples__btns
+                  button.work-examples__btn.work-examples__btn--prev(aria-label="Предыдущий")
+                    +icon-mono('arrow-right')(width="45px", height="22px")
+
+                  button.work-examples__btn.work-examples__btn--next(aria-label="Следующий")
+                    +icon-mono('arrow-right')(width="45px", height="22px")
+                span.work-examples__line
+                .work-examples__count.swiper-pagination.swiper-pagination-fraction.swiper-pagination-horizontal
+                  span.work-examples__current.swiper-pagination-current
+                  | /
+                  span.work-examples__total.swiper-pagination-total
+          .work-examples__col.work-examples__col--media
+            .work-examples__slider.slider-double.swiper
+              .slider-double__wrapper.swiper-wrapper
+                each slide in data.slider
+                  .slider-double__card.swiper-slide
+                    .slider-double__inner
+                      a.slider-double__media(href= 'images/work-example/large/' + slide.src + '_1.jpg', target="_blank")
+                        +imgAdaptiveWorkExamples(slide.src + '_1.jpg', slide.alt + ' до ремонта')
+                      a.slider-double__media(href= 'images/work-example/large/' + slide.src + '_2.jpg', target="_blank")
+                        +imgAdaptiveWorkExamples(slide.src + '_2.jpg', slide.alt + ' после ремонта')
+
+          .work-examples__pagination.work-examples__pagination--mobile
+            button.work-examples__btn.work-examples__btn--prev(aria-label="Предыдущий")
+              +icon-mono('arrow-right')(width="45px", height="22px")
+
+            .work-examples__count.swiper-pagination.swiper-pagination-fraction.swiper-pagination-horizontal
+              span.work-examples__current.swiper-pagination-current
+              | /
+              span.work-examples__total.swiper-pagination-total
+
+            button.work-examples__btn.work-examples__btn--next(aria-label="Следующий")
+              +icon-mono('arrow-right')(width="45px", height="22px")
+
+      .work-examples__dots
+        .icon-dots
