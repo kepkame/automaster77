@@ -1,0 +1,12 @@
+extends layout/default.pug
+
+block prepend variables
+  - const bodyClass = 'page-painting'
+  - const url = 'painting.html'
+  - const pageTitle = 'Локальная покраска'
+
+block content
+  include pages/services/painting/index.pug
+
+block prepend scripts
+  script(src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js")
