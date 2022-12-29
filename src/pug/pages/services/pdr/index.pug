@@ -139,14 +139,25 @@
   }
 
 -
-  const pdrTablePrices = [
-    ['до 3 см.', 'от 1 500 ₽', false],
-    ['3-5 см.', 'от 2 500 ₽', false],
-    ['5-7 см.', 'от 4 000 ₽', false],
-    ['7-5 см.', 'от 4 000 ₽', false],
-    ['10-20 см.', 'от 7 000 ₽', false],
-    ['от 20 см.', 'оценка стоимости при осмотре мастером', true],
-  ]
+  const pdrTablePrices = {
+    title: 'Цена удаления вмятин без покраски',
+    description: [
+      'Зависит от размера вмятины, расположения на детали кузова, от степени сложности и необходимости дополнительных арматурных работ.',
+      'Оплата после завершения ремонта.',
+    ],
+    table: [
+      ['до 3 см.', 'от 1 500 ₽', false],
+      ['3-5 см.', 'от 2 500 ₽', false],
+      ['5-7 см.', 'от 4 000 ₽', false],
+      ['7-5 см.', 'от 4 000 ₽', false],
+      ['10-20 см.', 'от 7 000 ₽', false],
+      ['от 20 см.', 'оценка стоимости при осмотре мастером', true],
+    ],
+    images: [
+      'pdr-bmw-x6-bagazhnik-rebro-do.jpg',
+      'pdr-bmw-x6-bagazhnik-rebro-posle.jpg',
+    ]
+  }
 
 +hero(pdrHero)
 +advantages(pdrAdvantages)
@@ -155,7 +166,7 @@
 +freeConsultation()
 +workExamples(pdrWordExample)
 +sectionVideo(articles)
-+section-prices(pdrTablePrices)
++sectionPrices(pdrTablePrices)
 +estimate(title)
 +services()
   +servicesList(services, siteNav[1].submenu[0].url)

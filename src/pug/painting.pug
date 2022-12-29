@@ -1,9 +1,9 @@
 extends layout/default.pug
 
 block prepend variables
-  - const bodyClass = 'page-painting'
-  - const url = 'painting.html'
-  - const pageTitle = 'Локальная покраска'
+  - let bodyClass = 'page-painting'
+  - let url = 'painting.html'
+  - let pageTitle = 'Локальная покраска'
 
 block content
   include pages/services/painting/index.pug

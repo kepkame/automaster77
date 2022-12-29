@@ -1,6 +1,14 @@
 .service-types {
   margin-top: 87px;
   padding-bottom: 90px;
+
+  &--list {
+
+  }
+
+  &--polishing {
+    padding-bottom: 0;
+  }
 }
 
 .service-types__wrapper {
@@ -13,6 +21,39 @@
 
 .service-types__inner {
 
+}
+
+.service-types__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+
+  .service-types__item {
+    padding-top: 30px;
+  }
+
+  .service-types__name {
+
+  }
+
+  .service-types__text {
+    margin-bottom: 10px;
+  }
+
+  .service-types__button {
+    line-height: 26px;
+    text-decoration: underline;
+    color: $color-text-primary;
+    background-color: transparent;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+
+    &:focus,
+    &:hover {
+      color: $color-primary;
+    }
+  }
 }
 
 .service-types__item {
@@ -54,6 +95,7 @@
   margin: 0;
 }
 
+
 @media (min-width: $grid-breakpoints-sm) {
   .service-types__inner {
     display: flex;
@@ -76,12 +118,63 @@
       margin-bottom: 0;
     }
   }
+
+  .service-types__list .service-types__item:nth-child(2) {
+    margin-top: 16px;
+  }
+}
+
+@media (min-width: $grid-breakpoints-md) {
+  .service-types {
+
+    &--polishing {
+      padding-bottom: 30px;
+    }
+  }
+
+  .service-types__list {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-start;
+
+    .service-types__item {
+      flex-basis: calc(50% - 8px);
+      margin-left: auto;
+      padding: 45px 30px;
+
+      &:nth-child(2) {
+        margin-top: 0;
+      }
+
+      &:nth-child(2n + 1) {
+        margin-left: 0;
+      }
+    }
+
+    .service-types__name {
+      font-size: 26px;
+      line-height: 32px;
+    }
+  }
+}
+
+@media (min-width: $grid-breakpoints-md) {
+  .service-types {
+    margin-top: 120px;
+    padding-bottom: 120px;
+
+    &--polishing {
+      padding-bottom: 30px;
+    }
+  }
 }
 
 @media (min-width: $grid-breakpoints-xl) {
   .service-types {
-    margin-top: 120px;
-    padding-bottom: 120px;
+
+    &--polishing {
+      padding-bottom: 30px;
+    }
   }
 
   .service-types__item {
@@ -90,6 +183,10 @@
     align-items: center;
     justify-content: flex-start;
     padding: 45px 30px 45px 0;
+
+    .service-types__list & {
+      display: block;
+    }
   }
 
   .service-types__col--media {
@@ -102,5 +199,39 @@
   .service-types__col--text {
     flex: 0 1 auto;
     margin-left: 30px;
+  }
+}
+
+@media (min-width: $grid-breakpoints-full) {
+  .service-types__list {
+
+    .service-types__item {
+      flex-basis: calc(24.68% - 7px);
+      display: block;
+      margin-left: 1.14%;
+
+      &:nth-child(-n + 4) {
+        margin-top: 0;
+      }
+
+      &:nth-child(2n) {
+        position: relative;
+        top: 30px;
+      }
+
+      &:nth-child(2n + 1) {
+        margin-left: 1.14%;
+      }
+
+      &:nth-child(4n + 1) {
+        // background-color: pink;
+        margin-left: 0;
+      }
+    }
+
+    .service-types__name {
+      font-size: 24px;
+      line-height: 28px;
+    }
   }
 }

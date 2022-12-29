@@ -1,0 +1,11 @@
+mixin price-cards(data, className)
+  table(class= (className) ? className + ' price-cards' : 'price-cards')
+    thead.price-cards__head.visually-hidden
+      tr.price-cards__row
+        th.price-cards__col Наименование услуги
+        th.price-cards__col Стоимость
+    tbody.price-cards__body
+      each item in data
+        tr.price-cards__row
+          td.price-cards__col.price-cards__col--name #{item.name}
+          td.price-cards__col.price-cards__col--price от #{Number(item.price).toLocaleString('ru-RU')} руб.

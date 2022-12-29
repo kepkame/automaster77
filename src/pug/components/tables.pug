@@ -1,5 +1,5 @@
-mixin table(data, tableHead = false, nameClass = false)
-  table.table(class= (nameClass) ? nameClass : '')
+mixin table(data, tableHead= false, className= false, classNameTwo= false)
+  table(class= (className) ? className : '', class="table", class= (classNameTwo) ? classNameTwo : '')
     if (tableHead)
       thead.table__head
         tr.table__row

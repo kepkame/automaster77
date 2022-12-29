@@ -1,5 +1,5 @@
-mixin service-types(data, nameClass)
-  .service-types(class= (nameClass) ? nameClass : '')
+mixin service-types(data, className)
+  section.service-types(class= (className) ? className : '')
     .container
       .service-types__wrapper
         h2.service-types__title.title-line.title-center #{data.title}
@@ -11,3 +11,15 @@ mixin service-types(data, nameClass)
               .service-types__col.service-types__col--text
                 h3.service-types__name #{item.title}
                 p.service-types__text #{item.description}
+
+mixin serviceTypesList(data, className)
+  section.service-types.service-types--list(class= (className) ? className : '')
+    .container
+      .service-types__wrapper
+        h2.service-types__title.title-line #{data.title}
+        ul.service-types__list
+          each item in data.cards
+            li.service-types__item
+              h3.service-types__name #{item.title}
+              p.service-types__text #{item.description}
+              button.service-types__button #{data.btnText}
