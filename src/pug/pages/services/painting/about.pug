@@ -1,0 +1,12 @@
+section.painting-about
+  .container
+    .painting-about__wrapper
+      .painting-about__col.painting-about__col--text
+        .painting-about__content
+          h2.painting-about__title.title-line.title-line--grey #{paintingAbout.title}
+          .painting-about__description
+            each text in paintingAbout.description
+              p #{text}
+
+      .painting-about__col.painting-about__col--media
+        +img('kraskoraspylitel.png')(class= "painting-about__img")

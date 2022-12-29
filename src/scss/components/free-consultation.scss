@@ -114,6 +114,10 @@
 }
 
 @media (min-width: $grid-breakpoints-md) {
+  .free-consultation {
+    margin-bottom: 120px;
+  }
+
   .free-consultation__wrapper {
     padding-right: 25px;
     padding-left: 25px;
@@ -121,10 +125,6 @@
 }
 
 @media (min-width: $grid-breakpoints-lg) {
-  .free-consultation {
-    margin-bottom: 120px;
-  }
-
   .free-consultation__container {
     @include container-desktop;
   }

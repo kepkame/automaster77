@@ -52,16 +52,16 @@
 }
 
 @media (min-width: $grid-breakpoints-md) {
+  .section-video {
+    padding-top: 120px;
+  }
+
   .section-video__bg {
     height: calc(82.3% - 72px);
   }
 }
 
 @media (min-width: $grid-breakpoints-lg) {
-  .section-video {
-    padding-top: 120px;
-  }
-
   .section-video__bg {
     left: auto;
     right: 0;

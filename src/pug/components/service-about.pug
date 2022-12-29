@@ -1,5 +1,5 @@
 mixin serviceAboutFramed(data)
-  .service-about
+  section.service-about
     .service-about__wrapper
       .service-about__col
         .service-about__content
@@ -11,11 +11,16 @@ mixin serviceAboutFramed(data)
         .service-about__content
           .framed-content
             .framed-content__wrapper
-              h2.service-about__title #{data.secondaryTitle}
-              p #{data.secondaryDescription}
+              h2.framed-content__title #{data.secondaryTitle}
+              if (data.secondaryDescription)
+                p #{data.secondaryDescription}
+              else if (data.secondaryList)
+                ul.framed-content__list
+                  each text in data.secondaryList
+                    li.framed-content__item #{text}
 
 mixin serviceAboutImage(data)
-  .service-about
+  section.service-about
     .service-about__wrapper
       .service-about__col
         .service-about__container
@@ -28,7 +33,7 @@ mixin serviceAboutImage(data)
           //- block secContent
 
 mixin serviceAboutSlider(data)
-  .service-about
+  section.service-about
     .service-about__wrapper
       .service-about__col
         .service-about__container
