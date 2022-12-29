@@ -1,0 +1,15 @@
+mixin section-price-cards(data)
+  section.section-price-cards
+    .section-price-cards__container
+      .section-price-cards__wrapper
+        .section-price-cards__frame
+        .section-price-cards__col.section-price-cards__col--text
+          .section-price-cards__content
+            h2.section-price-cards__title.title-line #{data.title}
+            .section-price-cards__description
+              each paragraph in data.description
+                p #{paragraph}
+            button.btn.btn--small.btn-booking Записаться на покраску
+        .section-price-cards__col.section-price-cards__col--prices
+          +price-cards(data.prices, 'section-price-cards__cards')
+          button.btn.btn--small.btn-booking Записаться на покраску

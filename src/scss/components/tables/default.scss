@@ -1,0 +1,150 @@
+.table {
+  display: block;
+  border-collapse: collapse;
+}
+
+.table__head,
+.table__body {
+  display: block;
+}
+
+.table__head {
+
+  .table__row {
+    background-color: transparent;
+  }
+
+  .table__cell {
+    font-size: 18px;
+    font-family: $font-family-title;
+    font-weight: 800;
+    line-height: 26px;
+    text-align: left;
+    opacity: 0.3;
+  }
+}
+
+.table__body {
+
+}
+
+.table__row {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: flex-start;
+  justify-content: flex-start;
+  transition: background-color $transition-time ease;
+
+  .table__body & {
+    border-top: 1px solid #ffffff;
+
+    &:first-child {
+      border-top: none;
+    }
+
+    &:nth-child(even) {
+
+    }
+
+    &:nth-child(odd) {
+      background-color: mix($color-border, #000000, 80);
+    }
+  }
+
+  .table__head + .table__body &:first-child {
+    border-top: 1px solid #ffffff;
+  }
+
+  &--full {
+    flex-wrap: wrap;
+  }
+
+  .table__body &:hover {
+    background-color: mix($color-border, #000000, 50);
+  }
+
+  // .table--long-names & {
+  //   flex-wrap: wrap;
+  // }
+
+  // .table--long-names .table__head + .table__body &:first-child {
+  //   border-top: none;
+  // }
+}
+
+.table__cell {
+  font-size: 16px;
+  line-height: 26px;
+  padding: 6px 16px;
+
+  &:first-child,
+  &:last-child {
+    flex-basis: calc(50% - 8px);
+  }
+
+  &:first-child {
+    // flex-basis: calc(50% - 12px);
+    font-weight: 600;
+  }
+
+  &:last-child {
+    // flex-basis: calc(50% + 12px);
+    margin-left: auto;
+  }
+
+  .table__row--full & {
+
+    &:first-child {
+      flex-basis: 100%;
+      padding-bottom: 0;
+    }
+
+    &:last-child {
+      flex-basis: 100%;
+      margin-left: 0;
+      padding-top: 0;
+    }
+  }
+
+  // .table--long-names & {
+  //   flex-basis: 100%;
+
+  //   &:first-child {
+  //     padding-top: 10px;
+  //     padding-bottom: 5px;
+  //   }
+
+  //   &:last-child {
+  //     padding-top: 0;
+  //     padding-bottom: 10px;
+  //   }
+  // }
+}
+
+@media (min-width: 370px) {
+  .table__cell {
+    padding-right: 30px;
+    padding-left: 30px;
+  }
+}
+
+@media (min-width: $grid-breakpoints-lg) {
+  .table__cell,
+  .table__row--full .table__cell {
+
+    &:first-child,
+    &:last-child {
+      padding-top: 6px;
+      padding-bottom: 6px;
+    }
+
+    &:first-child {
+      flex-basis: 41.40%;
+    }
+
+    &:last-child {
+      flex-basis: 55.63%;
+      margin-left: auto;
+    }
+  }
+}

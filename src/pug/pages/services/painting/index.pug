@@ -5,7 +5,7 @@
     textButton: 'Записаться на покраску',
     isBenefits: true,
     benefits: [
-      {icon: 'purse', text: 'от 5 000 ₽'},
+      {icon: 'purse', text: 'Цена от 5 000 ₽'},
     ],
     image: 'hero-pokraska.jpg',
   }
@@ -37,6 +37,46 @@
     ],
   }
 
+//- -
+//-   const paintingPrices = {
+//-     title: 'Цена покраски автомобиля',
+//-     description: [
+//-       'Стоимость зависит от величины повреждения детали, расположения и от сложности арматурных работ.',
+//-       'Оплата после завершения работ.',
+//-     ],
+//-     services: [
+//-       {
+//-         title: 'Покраска бампера',
+//-         cost: 'от 10 000 руб.',
+//-       },
+//-       {
+//-         title: 'Покраска двери',
+//-         cost: 'от 10 000 руб.',
+//-       },
+//-       {
+//-         title: 'Покраска капота',
+//-         cost: 'от 12 000 руб.',
+//-       },
+//-       {
+//-         title: 'Покраска переднего крыла',
+//-         cost: 'от 10 000 руб.',
+//-       },
+//-       {
+//-         title: 'Покраска заднего крыла',
+//-         cost: 'от 10 000 руб.',
+//-       },
+//-       {
+//-         title: 'Покраска крыши',
+//-         cost: 'от 15 000 руб.',
+//-       },
+//-     ]
+//-   }
+
+-
+  const paintingEstimateText = [
+    `Вы можете заказать предварительную оценку стоимости покраски автомобиля отправив фотографии повреждения в <a href="${siteWhatsapp}" target="_blank">WhatsApp</a>, <a href="${siteTelegram}" target="_blank">Telegram</a> либо заполнив форму.`
+  ]
+
 -
   const paintingPrices = {
     title: 'Цена покраски автомобиля',
@@ -44,48 +84,39 @@
       'Стоимость зависит от величины повреждения детали, расположения и от сложности арматурных работ.',
       'Оплата после завершения работ.',
     ],
-    services: [
+    prices: [
       {
-        title: 'Покраска бампера',
-        cost: 'от 10 000 руб.',
+        name: 'Покраска бампера',
+        price: '10000'
       },
       {
-        title: 'Покраска двери',
-        cost: 'от 10 000 руб.',
+        name: 'Покраска двери',
+        price: '10000'
       },
       {
-        title: 'Покраска капота',
-        cost: 'от 12 000 руб.',
+        name: 'Покраска капота',
+        price: '12000'
       },
       {
-        title: 'Покраска переднего крыла',
-        cost: 'от 10 000 руб.',
+        name: 'Покраска переднего крыла',
+        price: '10000'
       },
       {
-        title: 'Покраска заднего крыла',
-        cost: 'от 10 000 руб.',
+        name: 'Покраска заднего крыла',
+        price: '10000'
       },
       {
-        title: 'Покраска крыши',
-        cost: 'от 15 000 руб.',
+        name: 'Покраска крыши',
+        price: '15000'
       },
-    ]
+    ],
   }
 
--
-  const paintingEstimateText = [
-    `Вы можете заказать предварительную оценку стоимости покраски автомобиля отправив фотографии повреждения в <a href="${siteWhatsapp}" target="_blank">WhatsApp</a>, <a href="${siteTelegram}" target="_blank">Telegram</a> либо заполнив форму.`
-  ]
-
 +hero(paintingHero)
-//- +advantages(pdrAdvantages)
 include ./about.pug
 +service-types(paintingTypes)
-+section-prices-cards(paintingPrices)
-//- +serviceAboutFramed(pdrAbout)
-//- +workExamples(pdrWordExample)
-//- +sectionVideo(articles)
++section-price-cards(paintingPrices)
 +estimate(title, paintingEstimateText)
 +services()
-  +servicesList(services, siteNav[1].submenu[0].url)
+  +servicesList(services, url)
 +whereAreWe

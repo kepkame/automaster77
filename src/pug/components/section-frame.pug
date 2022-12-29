@@ -1,5 +1,5 @@
 mixin sectionFrame(data, reverse = false)
-  .section-frame(class= {'section-frame--reverse': side === true})
+  section.section-frame(class= {'section-frame--reverse': side === true})
     .section-frame__wrapper
       .section-frame__frame
       .section-frame__col.section-frame__col--text
@@ -13,7 +13,7 @@ mixin sectionFrame(data, reverse = false)
 
 
 mixin sectionFrameList(data, reverse = false)
-  .section-frame(class= {'section-frame--reverse': reverse === true})
+  section.section-frame(class= {'section-frame--reverse': reverse === true})
     .section-frame__wrapper
       .section-frame__frame
       .section-frame__col.section-frame__col--text

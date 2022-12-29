@@ -1,9 +1,9 @@
 extends layout/default.pug
 
 block prepend variables
-  - const bodyClass = 'archive-services'
-  - const url = 'services.html'
-  - const pageTitle = 'Услуги'
+  - let bodyClass = 'archive-services'
+  - let url = 'services.html'
+  - let pageTitle = 'Услуги'
 
 block content
   include pages/services/index.pug
