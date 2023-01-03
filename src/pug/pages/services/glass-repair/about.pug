@@ -1,0 +1,12 @@
+section.service-about
+  .service-about__container
+    .service-about__wrapper
+      .service-about__col.service-about__col--text
+        .service-about__content
+          h2.service-about__title.title-line.title-line--grey #{glassRepairAbout.title}
+          .service-about__description
+            each text in glassRepairAbout.description
+              p #{text}
+
+      .service-about__col.service-about__col--media
+        +sliderAbout(glassRepairAbout.slider)

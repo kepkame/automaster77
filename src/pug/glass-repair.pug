@@ -1,0 +1,12 @@
+extends layout/default.pug
+
+block prepend variables
+  - let bodyClass = 'page-glass-repair'
+  - let url = 'glass-repair.html'
+  - let pageTitle = 'Ремонт сколов и трещин на стекле'
+
+block content
+  include pages/services/glass-repair/index.pug
+
+block prepend scripts
+  script(src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js")

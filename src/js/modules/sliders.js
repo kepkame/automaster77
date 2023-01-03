@@ -1,5 +1,36 @@
 export default () => {
-  // init Swiper:
+  // init Swipers
+  const sliderAbout = new Swiper('.slider-about__swiper', {
+    loop: false,
+    centeredSlides: true,
+    spaceBetween: 16,
+    speed: 400,
+    grabCursor: true,
+    slidesPerView: 'auto',
+    watchSlidesProgress: true,
+
+    // If we need pagination
+    pagination: {
+      el: '.slider-about__pagination',
+      clickable: true,
+    },
+
+    // Navigation arrows
+    navigation: {
+      nextEl: '.slider-about__btn--next',
+      prevEl: '.slider-about__btn--prev',
+    },
+
+    breakpoints: {
+      // when window width is >= 576px
+      410: {
+        slidesPerView: 1,
+        spaceBetween: 42,
+        centeredSlides: true,
+      },
+    },
+  });
+
   const sliderCoverflow = new Swiper('.slider-coverflow', {
     loop: true,
     spaceBetween: 15,
@@ -217,10 +248,10 @@ export default () => {
   initSlider(sliderType);
 
   window.addEventListener('resize', () => {
-    if (window.innerWidth < 992 && sliderType == 'desktop') {
+    if (window.innerWidth < 992 && sliderType === 'desktop') {
       sliderType = 'mobile';
       initSlider(sliderType);
-    } else if (window.innerWidth >= 992 && sliderType == 'mobile') {
+    } else if (window.innerWidth >= 992 && sliderType === 'mobile') {
       sliderType = 'desktop';
       initSlider(sliderType);
     }

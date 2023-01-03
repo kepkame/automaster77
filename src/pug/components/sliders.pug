@@ -1,0 +1,19 @@
+mixin sliderAbout(data)
+  .slider-about
+    button.slider-about__btn.slider-about__btn--prev.btn-arrow(aria-label="Предыдущий")
+      +icon-mono('arrow')(width="8px", height="13px")
+
+    button.slider-about__btn.slider-about__btn--next.btn-arrow(aria-label="Следующий")
+      +icon-mono('arrow')(width="8px", height="13px")
+
+    .slider-about__swiper.swiper
+      .slider-about__wrapper.swiper-wrapper
+        each item in data
+          .slider-about__item.swiper-slide
+            .slider-about__media
+              +imgNotLazy(item.img)(class= "slider-about__img")
+            .slider-about__text
+              h3.slider-about__title #{item.title}
+              p.slider-about__description #{item.text}
+
+      .slider-about__pagination.swiper-pagination
