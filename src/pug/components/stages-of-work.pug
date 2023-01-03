@@ -7,7 +7,7 @@ mixin numberedListCards(data, className= false)
               if (item.title)
                 .num-list-cards__header
                   if (item.mark)
-                    span.num-list-cards__counter
+                    span.num-list-cards__counter.counter
                   h4.num-list-cards__title #{item.title}
               if (item.text)
                 p.num-list-cards__text #{item.text}

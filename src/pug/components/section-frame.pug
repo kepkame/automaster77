@@ -11,6 +11,23 @@ mixin sectionFrame(data, reverse = false)
       .section-frame__col.section-frame__col--media
         +img(data.image.src, data.image.alt)(class="section-frame__img", width= data.image.width, height= data.image.height)
 
+mixin sectionFrameSecondary(data)
+  section.section-frame-secondary(class= (data.className) ? data.className : '')
+    .section-frame-secondary__wrapper
+      .section-frame-secondary__frame
+      .section-frame-secondary__col.section-frame-secondary__col--text
+        .section-frame-secondary__content
+          h2.section-frame-secondary__title.title-line #{data.title}
+          .section-frame-secondary__description
+            each text in data.description
+              p #{text}
+      .section-frame-secondary__col.section-frame-secondary__col--media
+        .section-frame-secondary__inner
+          each img in data.images
+            .section-frame-secondary__media
+              +img(img.src, img.alt)(class="section-frame-secondary__img", width= img.width, height= img.height)
+        .section-frame-secondary__dots
+          .icon-dots
 
 mixin sectionFrameList(data, reverse = false)
   section.section-frame(class= {'section-frame--reverse': reverse === true})

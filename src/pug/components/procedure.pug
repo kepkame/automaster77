@@ -1,0 +1,15 @@
+mixin procedure(data)
+  section.procedure
+    .procedure__container
+      .procedure__wrapper
+        .procedure__frame
+        .procedure__col.procedure__col--text
+          h2.procedure__title.title-line #{data.title}
+          ul.procedure__list
+            each item in data.list
+              li.procedure__item
+                span.procedure__counter.counter
+                p.procedure__text #{item}
+        .procedure__col.procedure__col--media
+          .procedure__media
+            +imgAdaptive(data.img.src, data.img.alt)(class="procedure__img", width= data.img.width, height= data.img.height)
