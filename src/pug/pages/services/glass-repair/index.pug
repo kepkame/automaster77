@@ -75,8 +75,18 @@
     }
   }
 
+-
+  const glassRepairEstimateText = [
+    `Вы можете заказать предварительную оценку стоимости услуги отправив фотографии повреждения в <a href="${siteWhatsapp}" target="_blank">WhatsApp</a>, <a href="${siteTelegram}" target="_blank">Telegram</a> либо заполнив форму.`,
+    'Желательно делать несколько фотографий под разными углами и на разном расстоянии.'
+  ]
+
 
 +hero(glassRepairHero)
 include ./about.pug
 +sectionFrameSecondary(glassRepairNeed)
 +procedure(glassRepairProcedure)
++estimate(title, glassRepairEstimateText, 'Описание повреждения')
++services()
+  +servicesList(services, url)
++whereAreWe

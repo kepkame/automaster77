@@ -1,10 +1,10 @@
 -
-  const defaultText = [
+  const estimateDefaultText = [
     `Вы можете заказать предварительную оценку стоимости удаления вмятин отправив фотографии повреждения в <a href="${siteWhatsapp}" target="_blank">WhatsApp</a>, <a href="${siteTelegram}" target="_blank">Telegram</a> либо заполнив форму.`,
     'Желательно делать несколько фотографий под разными углами и на разном расстоянии, чтобы была видна глубина вмятины.',
   ]
 
-mixin estimate(title = 'Предварительная оценка по фото', text = defaultText, images = [['primer-povregdeniya-pdr-1.jpg', 'Фото вмятины на автомобиле'], ['primer-povregdeniya-pdr-2.jpg', 'Фото вмятины на автомобиле']], imagesCover = [['primer-povregdeniya-pdr-1-cover.jpg', 'Фото вмятины на автомобиле'], ['primer-povregdeniya-pdr-2-cover.jpg', 'Фото вмятины на автомобиле']])
+mixin estimate(title = 'Предварительная оценка по фото', text = estimateDefaultText, textareaPlaceholder= false, images = [['primer-povregdeniya-pdr-1.jpg', 'Фото вмятины на автомобиле'], ['primer-povregdeniya-pdr-2.jpg', 'Фото вмятины на автомобиле']], imagesCover = [['primer-povregdeniya-pdr-1-cover.jpg', 'Фото вмятины на автомобиле'], ['primer-povregdeniya-pdr-2-cover.jpg', 'Фото вмятины на автомобиле']])
   section.estimate
     .container
       .estimate__wrapper
@@ -15,7 +15,10 @@ mixin estimate(title = 'Предварительная оценка по фот�
             each item in text
               p!= item
 
-          +formEstimate('estimate__form')
+          if (!textareaPlaceholder)
+            +formEstimate('estimate__form')
+          else
+            +formEstimate('estimate__form', textareaPlaceholder)
 
         .estimate__col.estimate__col--slider
           .estimate__slider.slider-phone

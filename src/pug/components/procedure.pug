@@ -5,7 +5,7 @@ mixin procedure(data)
         .procedure__frame
         .procedure__col.procedure__col--text
           h2.procedure__title.title-line #{data.title}
-          ul.procedure__list
+          ol.procedure__list
             each item in data.list
               li.procedure__item
                 span.procedure__counter.counter

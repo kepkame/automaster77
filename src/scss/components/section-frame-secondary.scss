@@ -109,22 +109,62 @@
 
 @media (min-width: $grid-breakpoints-md) {
   .section-frame-secondary {
+    position: relative;
     padding: 120px 25px;
+
+    &:before,
+    &:after {
+      content: "";
+      position: absolute;
+      left: 0;
+      width: calc(50% - 358px);
+      height: 15px;
+      background-color: $color-border;
+    }
+
+    &:before {
+      top: 120px;
+    }
+
+    &:after {
+      bottom: 120px;
+    }
   }
 
   .section-frame-secondary__wrapper {
     max-width: $container-max-width;
     margin: 0 auto;
-    padding: 71px 65px 75px;
+    padding: 71px 65px 75px 0;
   }
 
   .section-frame-secondary__frame {
-    border-left-width: 15px;
+    // width: calc(50% + 80px);
+    border-left-width: 0;
     border-right-width: 15px;
+  }
+
+  .section-frame-secondary__col {
+
+    &--text {
+      max-width: 570px;
+    }
   }
 }
 
 @media (min-width: 830px) {
+  .section-frame-secondary__wrapper {
+    padding-left: 55px;
+  }
+
+  .section-frame-secondary__col {
+
+    &--text {
+      max-width: 650px;
+      margin-right: auto;
+      margin-left: auto;
+    }
+  }
+
   .section-frame-secondary__inner {
     max-width: 650px;
     margin: 0 auto;
@@ -155,6 +195,7 @@
       flex: 1 0 585px;
       max-width: 585px;
       margin-bottom: 0;
+      margin-left: 0;
       padding-right: 75px;
       padding-left: 25px;
       box-sizing: border-box;

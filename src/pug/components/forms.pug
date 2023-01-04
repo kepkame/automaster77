@@ -1,4 +1,4 @@
-mixin formEstimate(className= false, link= 'privacy-policy.html')
+mixin formEstimate(className= false, textareaPlaceholder= 'Описание проблемного места автомобиля')
   form(class= className, class= "form-estimate", action= "", method= "post", enctype= "multipart/form-data")
     .form-estimate__row
       .form-estimate__col
@@ -7,7 +7,7 @@ mixin formEstimate(className= false, link= 'privacy-policy.html')
         input(type= "text", maxlength= "50", placeholder= "Марка и модель авто")
 
     .form-estimate__row.form-estimate__row--full
-      textarea(rows= "5", cols= "67", placeholder= "Описание проблемного места автомобиля")
+      textarea(rows= "5", cols= "67", placeholder= textareaPlaceholder)
 
     .form-estimate__row.form-estimate__row--full
       +formInputFile('form-estimate__upload')
@@ -18,7 +18,7 @@ mixin formEstimate(className= false, link= 'privacy-policy.html')
       .form-estimate__col
         p.form-estimate__agreement
           | Нажимая на кнопку «Отправить на оценку», Вы соглашаетесь с !{' '}
-          a(href= link, target= "_blank") условиями обработки персональных данных
+          a(href= "privacy-policy.html", target= "_blank") условиями обработки персональных данных
           | .
 
 mixin formGetAdvice()
