@@ -1,4 +1,4 @@
-mixin formEstimate(className= false, textareaPlaceholder= 'Описание проблемного места автомобиля')
+mixin formEstimate(className= false, textareaPlaceholder= 'Описание проблемного места автомобиля', txtButton= 'Отправить на оценку')
   form(class= className, class= "form-estimate", action= "", method= "post", enctype= "multipart/form-data")
     .form-estimate__row
       .form-estimate__col
@@ -14,7 +14,7 @@ mixin formEstimate(className= false, textareaPlaceholder= 'Описание пр
 
     .form-estimate__row.form-estimate__row--bottom
       .form-estimate__col
-        input.btn(type= "submit", value= "Отправить на оценку")
+        input.btn(type= "submit", value= txtButton)
       .form-estimate__col
         p.form-estimate__agreement
           | Нажимая на кнопку «Отправить на оценку», Вы соглашаетесь с !{' '}

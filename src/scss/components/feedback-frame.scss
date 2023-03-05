@@ -1,0 +1,153 @@
+.feedback-frame {
+
+}
+
+.feedback-frame__container {
+
+}
+
+.feedback-frame__wrapper {
+  position: relative;
+  padding: 60px 15px;
+}
+
+.feedback-frame__frame {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 15px solid $color-border;
+  border-left-width: 0;
+  border-right-width: 0;
+  z-index: -1;
+}
+
+.feedback-frame__col {
+
+  &--form {
+
+  }
+
+  &--dots {
+    display: none;
+  }
+}
+
+.feedback-frame__title {
+  margin-top: 0;
+}
+
+.feedback-frame__form {
+
+}
+
+@media (min-width: $grid-breakpoints-md) {
+  .feedback-frame {
+    @include container-desktop;
+    padding-right: 0;
+  }
+
+  .feedback-frame__wrapper {
+    padding-left: 60px;
+    padding-right: 0px;
+  }
+
+  .feedback-frame__frame {
+    border-left-width: 15px;
+  }
+
+  .feedback-frame__col {
+
+    &--form {
+      max-width: 614px;
+    }
+
+    &--dots {
+      display: block;
+      position: absolute;
+      top: 50%;
+      right: 0;
+      width: calc(100% - 728px);
+      height: 345px;
+      transform: translateY(-50%);
+
+      .icon-dots {
+        max-width: 100%;
+        height: 345px;
+      }
+    }
+  }
+}
+
+@media (min-width: $grid-breakpoints-lg) {
+  .feedback-frame {
+    position: relative;
+    max-width: 100%;
+    margin-right: 0;
+    margin-left: 0;
+    padding-left: 0;
+
+    &:before,
+    &:after {
+      content: "";
+      position: absolute;
+      right: 0;
+      width: calc(50% - 675px);
+      height: 15px;
+      background-color: $color-border;
+    }
+
+    &:before {
+      top: 0;
+    }
+
+    &:after {
+      bottom: 0;
+    }
+  }
+
+  .feedback-frame__container {
+    @include container-desktop;
+    padding-right: 0;
+    padding-left: 25px;
+  }
+}
+
+@media (min-width: $grid-breakpoints-full) {
+  .feedback-frame__wrapper {
+    padding-right: 80px;
+    padding-left: 80px;
+  }
+
+  .feedback-frame__col--dots {
+    width: calc(100% - 748px);
+  }
+}
+
+@media (min-width: 1440px) {
+  .feedback-frame {
+
+    &:before,
+    &:after {
+      content: none;
+    }
+  }
+
+  .feedback-frame__container {
+    padding-right: 25px;
+  }
+
+  .feedback-frame__frame {
+    border-right-width: 15px;
+  }
+
+  .feedback-frame__col--dots {
+    width: calc(100% - 828px);
+    right: 80px;
+
+    .icon-dots {
+      transform: rotate(-180deg);
+    }
+  }
+}

@@ -14,3 +14,13 @@
     width: 100%;
   }
 }
+
+@media (min-width: 1440px) {
+  .entry-header {
+
+    .title-line:after {
+      left: 0;
+      width: 130px;
+    }
+  }
+}

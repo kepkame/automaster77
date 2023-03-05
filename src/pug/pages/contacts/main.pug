@@ -1,3 +1,88 @@
-.container
-  h1 Контакты
-  p Страница создана
+-
+  const contactsList = [
+    {
+      icon: 'mobile',
+      title: 'Телефон',
+      text: [
+        {
+          text: '+7 (985) 111-88-28',
+          link: 'tel:+79851118828',
+        }
+      ],
+    },
+    {
+      icon: 'mail',
+      title: 'E-mail',
+      text: [
+        {
+          text: 'info@automaster77.com',
+          link: 'mailto:info@automaster77.com',
+        }
+      ],
+    },
+    {
+      icon: 'clock',
+      title: 'Время работы',
+      text: [
+        {
+          text: 'пн-пт: 10:00 - 19:00',
+          link: false,
+        },
+        {
+          text: 'сб: 11:00 - 16:00',
+          link: false,
+        },
+        {
+          text: 'вс: выходной',
+          link: false,
+        },
+      ],
+    },
+    {
+      icon: 'location-outline',
+      title: 'Адрес',
+      text: [
+        {
+          text: 'г. Москва, ул. Беломорская, д. 40, стр. 5',
+          link: false,
+        }
+      ],
+    }
+  ]
+
+
+
+.entry-header
+  .container
+    h1.title.title-line Контакты
+section.page-contacts__main
+  .page-contacts__wrapper
+    .page-contacts__col.page-contacts__col--text
+      ul.page-contacts__list
+        each item in contactsList
+          li.page-contacts__row.contact-row
+            .contact-row__col.contact-row__col--media
+              +icon-mono(item.icon)(class="contact-row__icon", width="18px", height="18px")
+            .contact-row__col.contact-row__col--text
+                h4.contact-row__title #{item.title}
+                .contact-row__inner
+                  each text in item.text
+                    if (!text.link)
+                      span.contact-row__text #{text.text}
+                    else
+                      a.contact-row__text(href= text.link) #{text.text}
+                  if (item.title == 'Адрес')
+                    a.page-contacts__btn.btn.btn--small(href="https://yandex.ru/maps/213/moscow/?rtext=~55.865940%2C37.483373&rtt=auto&ruri=~ymapsbm1%3A%2F%2Forg%3Foid%3D122631074075&z=16", target="_blank") Проложить маршрут
+    .page-contacts__col.page-contacts__col--map
+      .page-contacts__map#map
+      +route('page-contacts__route')
+
+section.page-contacts__feedback.feedback-frame
+  .feedback-frame__container
+    .feedback-frame__wrapper
+      .feedback-frame__frame
+      .feedback-frame__col.feedback-frame__col--form
+        h3.feedback-frame__title.title-line Появились вопросы? Напишите нам!
+        +formEstimate('feedback-frame__form', 'Ваш вопрос', 'Отправить')
+      .feedback-frame__col.feedback-frame__col--dots
+        span.icon-dots

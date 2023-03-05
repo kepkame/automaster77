@@ -1,0 +1,3 @@
+mixin route(className)
+  button(class= (className) ? `${className} route` : 'route', aria-label= "Смотреть видеомаршрут как доехать", title= "Видеомаршрут")
+    +imgLazy('video-marshrut.jpg', 'Дорога улицы Беломорская в Москве')(class="route__img", width="235", height="131")

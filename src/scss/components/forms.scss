@@ -32,6 +32,7 @@ textarea {
 
 .upload__btn {
   display: inline-block;
+  position: relative;
   font-size: inherit;
   line-height: inherit;
   color: $color-text-acceptance;
@@ -61,6 +62,22 @@ textarea {
 
 .upload__icon {
   display: none;
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 46px;
+  height: 100%;
+  border-left: 1px solid #BFC0C3;
+
+  .icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 22px;
+    height: 22px;
+    fill: $color-text-acceptance;
+    transform: translate(-50%, -50%);
+  }
 }
 
 .upload__text {
@@ -264,7 +281,6 @@ input.form-phone-inline__input {
   }
 
   .upload__btn {
-    position: relative;
     padding-right: 74px;
   }
 
@@ -278,22 +294,6 @@ input.form-phone-inline__input {
 
   .upload__icon {
     display: inline-block;
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 46px;
-    height: 100%;
-    border-left: 1px solid #BFC0C3;
-
-    .icon {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      width: 22px;
-      height: 22px;
-      fill: $color-text-acceptance;
-      transform: translate(-50%, -50%);
-    }
   }
 
   .form-estimate__agreement {

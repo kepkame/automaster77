@@ -26,5 +26,6 @@ mixin whereAreWe()
           span #{siteWorkingHours.sunday}
 
     .where-are-we__map#map
-    button.where-are-we__route(aria-label="Смотреть видеомаршрут как доехать", title="Видеомаршрут")
-      +imgLazy('video-marshrut.jpg', 'Дорога улицы Беломорская в Москве')(width="235", height="131")
+    +route('where-are-we__route')
+    //- button.where-are-we__route(aria-label="Смотреть видеомаршрут как доехать", title="Видеомаршрут")
+    //-   +imgLazy('video-marshrut.jpg', 'Дорога улицы Беломорская в Москве')(width="235", height="131")
