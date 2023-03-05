@@ -1,0 +1,35 @@
+mixin blogArticleText(data)
+  .blog-article__header
+    h2.blog-article__header.title-line.title-line--grey #{data.title}
+    .blog-article__
+      .blog-article__data
+        +icon-mono('clock-basic')(width="24px", height="24px")
+        | #{data.date}
+      .blog-article__category
+        +icon-mono('folder')(width="24px", height="24px")
+        if (data.video)
+          | Видео
+        else
+          | Категория
+    .blog-article__description
+      p #{data.desc}
+
+mixin blogArticleMedia(data)
+  .page-blog__media
+    if (data.video)
+
+mixin blogArticle(data)
+  .page-blog__article(class= data.video ? 'page-blog__article--video' : '')
+    +blogArticleText(data)
+    +blogArticleMedia(data)
+
+
+
+.entry-header
+  .container
+    h1.title.title-line #{pageTitle}
+.page-blog__main
+  .page-blog__wrapper
+    each item, key in articles.reverse()
+      if (key < 6)
+        +blogArticle(item)
