@@ -1,35 +1,46 @@
 mixin blogArticleText(data)
-  .blog-article__header
-    h2.blog-article__header.title-line.title-line--grey #{data.title}
-    .blog-article__
-      .blog-article__data
-        +icon-mono('clock-basic')(width="24px", height="24px")
-        | #{data.date}
-      .blog-article__category
-        +icon-mono('folder')(width="24px", height="24px")
-        if (data.video)
-          | Видео
-        else
-          | Категория
+  .page-blog__text
+    header.blog-article__header
+      h2.title-line.title-line--grey
+        a(href= "/post-video.html") #{data.title}
+      .blog-article__meta.blog-meta
+        .blog-meta__item.blog-meta__item--date
+          +icon-mono('clock-basic')(class="blog-article__icon", width="24px", height="24px")
+          span.visually-hidden Дата публикации: #{' '}
+          | #{data.date}
+        .blog-meta__item.blog-meta__item--category
+          +icon-mono('folder')(class="blog-article__icon", width="24px", height="24px")
+          span.visually-hidden Категория: #{' '}
+          a.blog-meta__link(href="/post-video.html") #{data.category}
     .blog-article__description
       p #{data.desc}
 
 mixin blogArticleMedia(data)
-  .page-blog__media
+  .page-blog__media.blog-media(class= (data.video) ? 'blog-media--video' : '')
     if (data.video)
+      .blog-media__inner
+        +img(data.src, data.title)(class="page-blog__img")
+        //- img.page-blog__img(src= `/images/${data.src}`, alt= data.title)
+        button.btn-play(aria-label="Смотреть", tabindex="0")
+          +icon-mono('play')(width="21px", height="26px")
+    else
+      a.blog-media__inner(href= data.url, target="_blank")
+        +img(data.src, data.title)(class="page-blog__img")
+        //- img.page-blog__img(src= `/images/${data.src}`, alt= title)
 
 mixin blogArticle(data)
   .page-blog__article(class= data.video ? 'page-blog__article--video' : '')
-    +blogArticleText(data)
     +blogArticleMedia(data)
-
-
+    +blogArticleText(data)
 
 .entry-header
   .container
     h1.title.title-line #{pageTitle}
-.page-blog__main
-  .page-blog__wrapper
-    each item, key in articles.reverse()
-      if (key < 6)
-        +blogArticle(item)
+.entry-content
+  .container
+    .page-blog__main
+      .page-blog__wrapper
+        each item, key in articles.reverse()
+          if (key < 6)
+            +blogArticle(item)
+      +pagination

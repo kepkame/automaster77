@@ -1,0 +1,39 @@
+.blog-meta {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-start;
+  color: $color-text-additional;
+}
+
+.blog-meta__item {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: flex-start;
+  margin-right: 32px;
+
+  &:last-child {
+    margin-right: 0;
+  }
+
+  &--date {
+
+  }
+
+  &--category {
+
+  }
+
+  .icon {
+    margin-right: 8px;
+  }
+}
+
+.blog-meta__link {
+  color: $color-text-additional;
+
+  &:hover {
+    text-decoration: none;
+    color: $color-primary;
+  }
+}

@@ -102,34 +102,6 @@ img {
   background-repeat: repeat;
 }
 
-.title-center {
-  text-align: center;
-}
-
-.title-line {
-  position: relative;
-  margin-bottom: 42px;
-
-  &:after {
-    content: "";
-    position: absolute;
-    bottom: -12px;
-    left: 0;
-    width: 85px;
-    height: 3px;
-    background-color: $color-primary;
-  }
-
-  &--grey:after {
-    background-color: rgba($color-text-secondary, 0.3);
-  }
-
-  &.title-center:after {
-    left: 50%;
-    transform: translateX(-50%);
-  }
-}
-
 .visually-hidden:not(:focus):not(:active) {
   position: absolute;
   width: 1px;
@@ -158,27 +130,5 @@ img {
   h3 {
     font-size: 32px;
     line-height: 36px;
-  }
-
-  .entry-content {
-    margin-bottom: 90px;
-  }
-
-  .entry-header .title-line:after {
-    right: calc(100% - 130px);
-  }
-}
-
-@media (min-width: $grid-breakpoints-xl) {
-  .entry-content {
-    margin-bottom: 120px;
-  }
-}
-
-@media (min-width: 1440px) {
-  .entry-header .title-line:after {
-    left: 0;
-    right: auto;
-    width: 130px;
   }
 }
