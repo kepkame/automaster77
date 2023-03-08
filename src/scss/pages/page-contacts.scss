@@ -2,10 +2,6 @@
   margin-bottom: 60px;
 }
 
-.page-contacts__wrapper {
-
-}
-
 .page-contacts__col {
 
   &--text {
@@ -22,10 +18,6 @@
   list-style: none;
   margin: 0;
   padding: 0;
-}
-
-.page-contacts__row {
-
 }
 
 .page-contacts__btn {
@@ -60,7 +52,6 @@
 }
 
 @media (min-width: 600px) {
-
   .page-contacts__feedback {
 
     .form-estimate__row {
@@ -178,8 +169,6 @@
 
     &--map {
       flex: 1 0 auto;
-      // margin-right: 25px;
-      // margin-left: 25px;
     }
   }
 
@@ -196,10 +185,6 @@
 }
 
 @media (min-width: $grid-breakpoints-full) {
-  .page-contacts__main {
-
-  }
-
   .page-contacts__wrapper {
     @include container-desktop;
   }
@@ -212,7 +197,6 @@
     }
 
     &--map {
-      // flex-basis: ;
       padding-right: 0;
     }
   }
@@ -220,8 +204,4 @@
   .page-contacts__list {
     max-width: 356px;
   }
-}
-
-@media (min-width: 1400px) {
-
 }

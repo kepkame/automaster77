@@ -2,10 +2,6 @@
   margin-bottom: 90px;
 }
 
-.procedure__container {
-
-}
-
 .procedure__wrapper {
   position: relative;
   padding: 60px 15px;
@@ -28,11 +24,8 @@
   &--text {
     margin-bottom: 32px;
   }
-
-  &--media {
-
-  }
 }
+
 .procedure__title {
   margin-top: 0;
 }
@@ -57,17 +50,11 @@
 }
 
 .procedure__counter {
-  // position: relative;
-  // top: 3px;
   margin-top: 4px;
 }
 
 .procedure__text {
   margin: 0;
-}
-
-.procedure__media {
-
 }
 
 .procedure__img {
@@ -76,10 +63,6 @@
 }
 
 @media (min-width: 360px) {
-  .procedure__container {
-
-  }
-
   .procedure__item {
     align-items: center;
     margin-bottom: 32px;
@@ -116,14 +99,6 @@
     max-width: 650px;
     margin-right: auto;
     margin-left: auto;
-
-    &--text {
-
-    }
-
-    &--media {
-
-    }
   }
 }
 

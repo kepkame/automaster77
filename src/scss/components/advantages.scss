@@ -109,15 +109,11 @@
 
   .advantages__content {
     position: absolute;
-    // width: auto;
     top: -136px;
-    // left: 50%;
     left: 0;
     left: calc(50% - 215px);
-    // width: 100%;
     width: auto;
     max-width: 100%;
-    // transform: translateX(-50%);
     overflow: hidden;
   }
 

@@ -1,0 +1,11 @@
+extends layout/default.pug
+
+block prepend variables
+  - bodyClass = 'single single-post'
+  - let url = 'post.html'
+  - let pageTitle = 'Удаление вмятин на Toyota Fortuner'
+
+block content
+  include pages/post/main.pug
+
+block prepend scripts

@@ -30,8 +30,8 @@
 
   &:hover {
     color: $color-text-secondary;
-    background-color: mix($color-text-primary, #000000, 85);
-    border-color: mix($color-text-primary, #000000, 85);
+    background-color: mix($color-text-primary, #000000, 85%);
+    border-color: mix($color-text-primary, #000000, 85%);
   }
 }
 

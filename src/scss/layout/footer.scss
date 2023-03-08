@@ -117,22 +117,6 @@
   }
 }
 
-// .site-footer__messenger--whatsapp {
-
-// }
-
-// .icon--whatsapp-outline {
-
-// }
-
-// .site-footer__messenger--telegram {
-
-// }
-
-// .icon--telegram {
-
-// }
-
 .site-footer__address {
   display: block;
   max-width: 270px;
@@ -171,10 +155,6 @@
     flex-basis: calc(50% - 10px);
   }
 
-  // .site-footer__col--company {
-
-  // }
-
   .site-footer__col--quick-links {
     margin-left: auto;
   }
@@ -183,10 +163,6 @@
     order: 1;
     margin-left: auto;
   }
-
-  // .site-footer__col--contacts {
-
-  // }
 
   .site-footer__bottom {
     display: flex;
@@ -219,5 +195,3 @@
     max-width: 300px;
   }
 }
-
-@media (min-width: $grid-breakpoints-sm) {}

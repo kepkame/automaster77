@@ -1,0 +1,11 @@
+extends layout/single-column.pug
+
+block prepend variables
+  - bodyClass = 'privacy-policy'
+  - let url = 'privacy-policy.html'
+  - let pageTitle = 'Политика в отношении обработки персональных данных'
+
+block content
+  include pages/privacy-policy/main.pug
+
+block prepend scripts

@@ -2,16 +2,8 @@
   position: relative;
 }
 
-.about-us__container {
-
-}
-
 .about-us__wrapper {
   position: relative;
-}
-
-.about-us__col {
-
 }
 
 .about-us__col--text {
@@ -51,10 +43,6 @@
   display: none;
 }
 
-.icon-dots {
-
-}
-
 @media (min-width: $grid-breakpoints-md) {
   .about-us {
     overflow: hidden;
@@ -73,10 +61,6 @@
     padding-right: 40px;
     padding-bottom: 120px;
     padding-left: 25px;
-  }
-
-  .about-us__description {
-    // margin-right: 40px;
   }
 
   .about-us__col--media {
@@ -175,96 +159,3 @@
     padding-left: 120px;
   }
 }
-
-
-
-
-
-
-
-
-
-
-
-// @media (min-width: $grid-breakpoints-lg) {
-//   .about-us {
-//     position: relative;
-//     // background-color: $color-bg-secondary;
-//   }
-
-//   .about-us__container {
-//     max-width: $container-max-width;
-//     margin: 0 auto;
-//     padding-left: 20px;
-//     padding-right: 20px;
-//   }
-
-//   // .about-us:after {
-//   //   content: "";
-//   //   position: absolute;
-//   //   top: 0;
-//   //   left: 0;
-//   //   width: 25%;
-//   //   height: 100%;
-//   //   background-color: $color-bg-secondary;
-//   //   z-index: -1;
-//   // }
-
-//   .about-us__col--text {
-//     position: relative;
-//     left: -120px;
-//     flex: 0 0 calc(68.47% + 120px);
-//     // background-color: transparent;
-//     padding-right: 247px;
-//     padding-left: 120px;
-
-//     &:after {
-//       content: "";
-//       position: absolute;
-//       top: 0;
-//       left: -120px;
-//       left: -300px;
-//       width: 120px;
-//       width: 300px;
-//       height: 100%;
-//       background-color: $color-bg-secondary;
-//       // background-color: lightcoral;
-//       z-index: -1;
-//     }
-
-//     // &:before {
-//     //   content: "";
-//     //   position: absolute;
-//     //   top: 0;
-//     //   left: 0;
-//     //   width: 100%;
-//     //   height: 100%;
-//     //   background-color: $color-bg-secondary;
-//     // }
-//   }
-
-//   .about-us__col--media {
-//     background-color: $color-bg-primary; // 897px
-//     z-index: 0;
-//   }
-
-//   .about-us__image {
-//     top: 50%;
-//     left: -127px;
-//     left: auto;
-//     right: 0;
-//     width: 540px;
-//     height: auto;
-//     transform: translateY(-50%);
-//   }
-// }
-
-// @media (min-width: $grid-breakpoints-4k) {
-//   .about-us__col--text {
-//     position: relative;
-//     left: -120px;
-//     flex: 0 0 calc(68.47% + 120px);
-//     padding-right: 247px;
-//     padding-left: 120px;
-//   }
-// }

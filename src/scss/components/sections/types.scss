@@ -2,25 +2,13 @@
   margin-top: 87px;
   padding-bottom: 90px;
 
-  &--list {
-
-  }
-
   &--polishing {
     padding-bottom: 0;
   }
 }
 
-.service-types__wrapper {
-
-}
-
 .service-types__title {
   margin-top: 0;
-}
-
-.service-types__inner {
-
 }
 
 .service-types__list {
@@ -30,10 +18,6 @@
 
   .service-types__item {
     padding-top: 30px;
-  }
-
-  .service-types__name {
-
   }
 
   .service-types__text {
@@ -67,10 +51,6 @@
   }
 }
 
-.service-types__col {
-
-}
-
 .service-types__col--media {
   position: absolute;
   top: 30px;
@@ -80,10 +60,6 @@
 .service-types__img {
   width: 217px;
   height: auto;
-}
-
-.service-types__col--text {
-
 }
 
 .service-types__name {
@@ -224,7 +200,6 @@
       }
 
       &:nth-child(4n + 1) {
-        // background-color: pink;
         margin-left: 0;
       }
     }

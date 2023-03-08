@@ -1,0 +1,32 @@
+include ../data/config.pug
+include ../components/**/*.pug
+
+block variables
+
+doctype html
+html(lang="ru")
+  head
+    include ../parts/head.pug
+
+  body(class= 'no-js ' + bodyClass)
+    include ../parts/mfp-menu.pug
+
+    .page#page
+
+      block header
+        include ../parts/header.pug
+
+      .site-content#content
+        main.site-main
+          .entry-header
+            .container.container--single-col
+              h1.title.title-line #{pageTitle}
+          .entry-content
+            .container.container--single-col
+              block content
+
+      block footer
+        include ../parts/footer.pug
+
+      block scripts
+        script(src="js/main.min.js?v=" + siteVersion)

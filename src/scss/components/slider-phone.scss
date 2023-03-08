@@ -9,12 +9,10 @@
   left: 11.4%;
   width: 45.8%;
   height: 77.4%;
-  // background-color: darkgreen;
 }
 
 .slider-phone__hand {
   width: 100%;
-  // visibility: hidden;
 }
 
 .slider-phone__photos {
@@ -22,9 +20,7 @@
   top: 0;
   left: 0;
   width: 100%;
-  // height: 69%;
   height: 100%;
-  // border-radius: 15px;
   border-radius: 10%/5%;
   z-index: -1;
 }
@@ -34,10 +30,6 @@
   top: 0;
   left: 0;
 }
-
-// .slider-phone__item {
-
-// }
 
 .slider-phone__img {
   display: block;
@@ -55,7 +47,6 @@
 
 .slider-phone__app-camera {
   position: absolute;
-  // top: 1.5%;
   left: 0%;
   width: 100%;
   height: auto;
@@ -126,24 +117,6 @@
   height: 0;
   border-radius: 3px;
   padding-bottom: 12.3%;
-
-  // .slider-phone__item {
-    // position: relative;
-
-    // &:after {
-    //   content: "";
-    //   position: absolute;
-    //   top: 0;
-    //   left: 0;
-    //   width: 100%;
-    //   height: 100%;
-    //   background-color: lightcoral;
-    // }
-  // }
-
-  // .slider-phone__img {
-
-  // }
 }
 
 

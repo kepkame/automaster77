@@ -10,10 +10,6 @@
 
 .contact-row__col {
 
-  &--media {
-
-  }
-
   &--text {
     margin-left: 8px;
   }
@@ -25,10 +21,6 @@
   width: 18px;
   height: 18px;
   margin-top: 4px;
-  // &.icon--mobile {
-  //   stroke: $color-text-additional;
-  //   fill: transparent;
-  // }
 }
 
 .contact-row__title {
@@ -39,16 +31,11 @@
   margin: 0;
 }
 
-.contact-row__inner {
-
-}
-
 .contact-row__text {
   display: block;
   color: $color-text-primary;
 
   @at-root a#{&} {
-
 
     &:focus,
     &:hover {
@@ -56,4 +43,3 @@
     }
   }
 }
-

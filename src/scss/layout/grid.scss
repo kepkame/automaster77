@@ -5,5 +5,9 @@
 @media (min-width: $grid-breakpoints-md) {
   .container {
     @include container-desktop;
+
+    &--single-col {
+      max-width: 960px;
+    }
   }
 }

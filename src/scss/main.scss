@@ -10,7 +10,7 @@
 @import './base/base';
 
 // Swiper slider
-// @import 'libraries/swiper-bundle.min';
+@import 'libraries/swiper-bundle.min';
 @import 'libraries/swiper';
 
 @import './components/**/*';
@@ -24,4 +24,4 @@
 @import './pages/page-glass-repair';
 @import './pages/page-contacts';
 @import './pages/blog';
-// @import './pages/article';
+@import './pages/post';

@@ -1,11 +1,3 @@
-.slider-double {
-
-}
-
-.slider-double__wrapper {
-
-}
-
 .slider-double__card {
   @include container;
   box-sizing: border-box;
@@ -15,28 +7,12 @@
   fill: $color-text-primary;
 }
 
-.slider-double__inner {
-
-}
-
 .slider-double__media {
   display: inline-block;
-
-  img {
-
-  }
 
   & + & {
     margin-top: 15px;
   }
-}
-
-.swiper-wrapper {
-
-}
-
-.swiper-slide {
-
 }
 
 @media (min-width: $grid-breakpoints-sm) {
@@ -56,10 +32,6 @@
     & + & {
       margin-top: 0;
       margin-left: 18px;
-    }
-
-    img {
-
     }
   }
 }

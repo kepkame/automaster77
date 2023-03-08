@@ -22,14 +22,6 @@ textarea {
 }
 
 // File upload button
-// .upload {
-
-// }
-
-// .upload__input {
-
-// }
-
 .upload__btn {
   display: inline-block;
   position: relative;
@@ -40,21 +32,15 @@ textarea {
   border: none;
   margin-right: 10px;
   padding: 10px 15px;
-  transition: background-color $transition-time ease;
+  transition: color $transition-time ease, background-color $transition-time ease;
   cursor: pointer;
 
-  // &:focus {
-    // outline-offset: 0;
-  // }
-
   &:hover {
-    background-color: mix($color-text-primary, #000000, 95);
+    color: $color-text-secondary;
+    background-color: mix($color-text-primary, #000000, 95%);
+    outline: 1px solid rgba($color-text-secondary, 40%);
   }
 }
-
-// .upload__btn-mobile {
-
-// }
 
 .upload__btn-desktop {
   display: none;
@@ -68,6 +54,7 @@ textarea {
   width: 46px;
   height: 100%;
   border-left: 1px solid #BFC0C3;
+  transition: border-left-color $transition-time ease;
 
   .icon {
     position: absolute;
@@ -77,6 +64,15 @@ textarea {
     height: 22px;
     fill: $color-text-acceptance;
     transform: translate(-50%, -50%);
+    transition: fill $transition-time ease;
+  }
+
+  .upload__btn:hover & {
+    border-left: 1px solid $color-text-secondary;
+
+    .icon {
+      fill: $color-text-secondary;
+    }
   }
 }
 
@@ -166,10 +162,6 @@ textarea {
 }
 
 // Form phone inline
-.form-phone-inline {
-
-}
-
 .free-consultation__row {
   display: flex;
   flex-flow: row nowrap;
@@ -180,38 +172,6 @@ input.form-phone-inline__input {
   max-width: 220px;
   padding-top: 6px;
   padding-bottom: 6px;
-}
-
-.form-phone-inline__submit {
-
-}
-
-.simple-form__agree {
-  display: none;
-}
-
-.wpcf7-form-control-wrap {
-
-}
-
-.agree {
-
-}
-
-.wpcf7-form-control {
-
-}
-
-.wpcf7-acceptance {
-
-}
-
-.invert {
-
-}
-
-.wpcf7-list-item {
-
 }
 
 .form-phone-inline__acceptance {
@@ -249,14 +209,6 @@ input.form-phone-inline__input {
     font-size: inherit;
     line-height: inherit;
   }
-}
-
-@media (min-width: $grid-breakpoints-md) {
-
-}
-
-@media (min-width: $grid-breakpoints-lg) {
-
 }
 
 @media (min-width: $grid-breakpoints-xl) {

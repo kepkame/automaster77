@@ -17,14 +17,6 @@ ymaps {
   }
 }
 
-.balloon {
-
-}
-
-.balloon__wrapper {
-
-}
-
 .baloon__title {
   font-size: 16px;
   line-height: 20px;
@@ -67,10 +59,6 @@ ymaps {
   }
 }
 
-.baloon__contacts-view {
-
-}
-
 .baloon__contacts-item {
   display: flex;
   align-items: flex-start;
@@ -90,22 +78,6 @@ ymaps {
     flex-shrink: 0;
     margin-right: 8px;
   }
-}
-
-.baloon__contacts-item--address {
-
-}
-
-.baloon__contacts-item--phone {
-
-}
-
-.baloon__contacts-item--email {
-
-}
-
-.baloon__stops {
-
 }
 
 .baloon__stop {
@@ -145,10 +117,6 @@ ymaps {
   width: 24px;
   height: 24px;
   margin-right: 6px;
-}
-
-.baloon__metro-name {
-
 }
 
 .balloon__distance {

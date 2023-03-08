@@ -3,10 +3,6 @@
   padding-top: 90px;
 }
 
-.section-prices__container {
-  // @include container;
-}
-
 .section-prices__wrapper {
   position: relative;
   padding-top: 34px;
@@ -25,24 +21,8 @@
   z-index: -1;
 }
 
-.section-prices__content {
-
-}
-
-.section-prices__col {
-
-}
-
 .section-prices__col--text {
   @include container;
-}
-
-.section-prices__wrap-text {
-
-}
-
-.section-prices__title {
-
 }
 
 .section-prices__description {
@@ -57,20 +37,8 @@
   display: none;
 }
 
-.section-prices__wrap-media {
-
-}
-
-.section-prices__media {
-
-}
-
 .section-prices__dots {
   display: none;
-}
-
-@media (min-width: $grid-breakpoints-sm) {
-
 }
 
 @media (min-width: $grid-breakpoints-md) {
@@ -98,10 +66,6 @@
     padding-left: 65px;
     margin: 0 auto;
   }
-}
-
-@media (min-width: $grid-breakpoints-lg) {
-
 }
 
 @media (min-width: $grid-breakpoints-xl) {
@@ -140,11 +104,9 @@
       right: -15px;
       width: 15px;
       height: 55px;
-      // z-index: 1;
     }
 
     &:before {
-      // height: calc(100% - 110px);
       top: -15px;
     }
 

@@ -53,6 +53,17 @@
   }
 }
 
+@media (min-width: $grid-breakpoints-lg) {
+  .entry-header .container--single-col {
+
+    .title-line:after {
+      left: 0;
+      right: auto;
+      width: 130px;
+    }
+  }
+}
+
 @media (min-width: $grid-breakpoints-xl) {
   .entry-content {
     margin-bottom: 120px;

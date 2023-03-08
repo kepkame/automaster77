@@ -3,10 +3,6 @@
   margin-bottom: 90px;
 }
 
-// .section-services__wrapper {
-
-// }
-
 .section-services__title {
   margin-top: 0;
 }
@@ -160,9 +156,6 @@
   }
 }
 
-// @media (min-width: $grid-breakpoints-lg) {
-// }
-
 @media (min-width: $grid-breakpoints-xl) {
   .services-list__card {
     flex-basis: 31.24%;
@@ -192,12 +185,4 @@
   .services-list__card:nth-child(even) .services-list__wrapper {
     background-color: $color-border;
   }
-
-  // .services-list__card:nth-child(4n + 1) .services-list__wrapper {
-  //   background-color: green;
-  // }
-
-  // .services-list__card:nth-child(even) .service-color__wrapper {
-  //   background-color: $color-border;
-  // }
 }

@@ -1,0 +1,38 @@
+.entry-header
+  .container
+    h1.title.title-line #{pageTitle}
+.entry-content
+  .container
+    .single-post__main
+      .single-post__wrapper
+        .single-post__col.single-post__col--article.post-article
+          .post-article__wrapper
+            .post-article__header
+              .post-article__media(class= (articles[12].category === 'Видео') ? 'post-article__media--video js-play-video' : '')
+                +img(`large/${articles[12].src}`, articles[12].title)(class="post-article__img")
+                if (articles[12].category === 'Видео')
+                  button.btn-play(aria-label="Смотреть")
+                    +icon-mono('play')(width="21px", height="26px")
+              .post-article__meta.blog-meta
+                .blog-meta__item.blog-meta__item--date
+                  +icon-mono('clock-basic')(class="blog-article__icon", width="24px", height="24px")
+                  span.visually-hidden Дата публикации: #{' '}
+                  | #{articles[12].date}
+                .blog-meta__item.blog-meta__item--category
+                  +icon-mono('folder')(class="blog-article__icon", width="24px", height="24px")
+                  span.visually-hidden Категория: #{' '}
+                  a.blog-meta__link(href="/post.html") #{articles[12].category}
+            .post-article__content
+              p #{articles[12].desc}
+
+        .single-post__col.single-post__col--sidebar.post-sidebar
+          h2.post-sidebar__title.title-line.title-line--grey Последние видео
+          .post-sidebar__list
+            each item, key in articles.reverse()
+              if (key > 0 && key < 5)
+                .post-sidebar__item
+                  .post-sidebar__media
+                    a.post-sidebar__link(href="/post.html")
+                      +img(item.src, item.title)(class="post-sidebar__img")
+                  h3.post-sidebar__item-title
+                    a.post-sidebar__link(href="/post.html") #{item.title}

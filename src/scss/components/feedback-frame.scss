@@ -1,11 +1,3 @@
-.feedback-frame {
-
-}
-
-.feedback-frame__container {
-
-}
-
 .feedback-frame__wrapper {
   position: relative;
   padding: 60px 15px;
@@ -25,10 +17,6 @@
 
 .feedback-frame__col {
 
-  &--form {
-
-  }
-
   &--dots {
     display: none;
   }
@@ -36,10 +24,6 @@
 
 .feedback-frame__title {
   margin-top: 0;
-}
-
-.feedback-frame__form {
-
 }
 
 @media (min-width: $grid-breakpoints-md) {

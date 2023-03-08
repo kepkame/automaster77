@@ -1,16 +1,15 @@
 $color-primary: #df2424;
-$color-primary-hover: mix(#df2424, #000000, 80);
+$color-primary-hover: mix(#df2424, #000000, 80%);
 $color-secondary: #d6b384;
 $color-bg-primary: #1b2029;
 $color-bg-secondary: #e4e4e2;
-$color-bg-additional: mix(saturate(adjust-hue($color-bg-secondary, -200deg), 10%), #000000, 89.3); // #c7cacd;
+$color-bg-additional: mix(saturate(adjust-hue($color-bg-secondary, -200deg), 10%), #000000, 89.3%); // #c7cacd;
 $color-bg-linear: linear-gradient(90deg, $color-bg-additional 0%, $color-bg-secondary 100%);
-$color-bg-dark: mix($color-bg-primary, #000000, 68); // #12161C;
-// $color-additional: #ffffff;
+$color-bg-dark: mix($color-bg-primary, #000000, 68%); // #12161C;
 $color-text-primary: #fafafa;
 $color-text-secondary: #282d34;
 $color-text-additional: #8f8f8f;
-$color-text-acceptance: mix($color-text-additional, #000000, 88);
+$color-text-acceptance: mix($color-text-additional, #000000, 88%);
 $color-border: #33363f;
 $color-line: #fbfbfb;
 $themeColor: $color-primary;
@@ -31,5 +30,5 @@ $font-family-base: 'Montserrat', 'Arial', sans-serif;
 
 $border-radius: 1rem;
 $transition-time: 0.25s;
-$box-shadow: 0 0 0 #fff;
+$box-shadow: 0 0 0 $color-bg-primary;
 $container-max-width: 1360px;
