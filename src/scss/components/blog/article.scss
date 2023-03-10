@@ -24,36 +24,6 @@
 }
 
 @media (min-width: $grid-breakpoints-lg) {
-  .page-blog__article {
-    display: flex;
-    flex-flow: row nowrap;
-    align-items: stretch;
-    justify-content: space-between;
-
-    & + & {
-      margin-top: 60px;
-      padding-top: 60px;
-    }
-  }
-
-  .page-blog__media {
-    flex: 0 1 auto;
-    margin-right: 30px;
-
-    .page-blog__article:nth-child(odd) & {
-      order: 1;
-      margin-right: 0;
-    }
-  }
-
-  .page-blog__text {
-    flex: 1 0 520px;
-
-    .page-blog__article:nth-child(odd) & {
-      margin-right: 30px;
-    }
-  }
-
   .blog-article__header .title-line {
     margin-top: 0;
   }

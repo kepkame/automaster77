@@ -16,20 +16,19 @@ mixin blogArticleText(data)
       p #{data.desc}
 
 mixin blogArticleMedia(data)
-  .page-blog__media.blog-media(class= (data.video) ? 'blog-media--video' : '')
+  .page-blog__media
     if (data.video)
-      .blog-media__inner.js-play-video
-        +img(data.src, data.title)(class="page-blog__img")
-        //- img.page-blog__img(src= `/images/${data.src}`, alt= data.title)
+      .youtube-video
+        a.youtube-video__inner(href= `https://youtu.be/${data.video}`, target="_blank")
+          +img(`large/${data.src}`, data.title)(class="youtube-video__img")
         button.btn-play(aria-label="Смотреть", tabindex="0")
           +icon-mono('play')(width="21px", height="26px")
     else
-      a.blog-media__inner(href= data.url, target="_blank")
-        +img(data.src, data.title)(class="page-blog__img")
-        //- img.page-blog__img(src= `/images/${data.src}`, alt= title)
+      a(href= data.url)
+        +img(`large/${data.src}`, data.title)(class="page-blog__img")
 
 mixin blogArticle(data)
-  .page-blog__article(class= data.video ? 'page-blog__article--video' : '')
+  article.page-blog__article(class= data.video ? 'page-blog__article--video' : '')
     +blogArticleMedia(data)
     +blogArticleText(data)
 

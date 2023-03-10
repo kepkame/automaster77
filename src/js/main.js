@@ -10,6 +10,7 @@ import sliders from './modules/sliders';
 import inputMask from './modules/inputMask';
 import uploadFile from './modules/uploadFile';
 import map from './modules/map';
+import youtube from './modules/youtube';
 
 polyfills();
 // svgxuse();
@@ -22,4 +23,5 @@ documentReady(() => {
   inputMask();
   uploadFile();
   map();
+  youtube();
 });

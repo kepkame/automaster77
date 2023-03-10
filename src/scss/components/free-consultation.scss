@@ -22,6 +22,12 @@
   transition: opacity $transition-time ease;
 }
 
+.free-consultation__row {
+  display: flex;
+  flex-flow: row nowrap;
+  margin-bottom: 10px;
+}
+
 .free-consultation__img {
   position: absolute;
   top: 60px;

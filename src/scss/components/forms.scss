@@ -162,10 +162,8 @@ textarea {
 }
 
 // Form phone inline
-.free-consultation__row {
-  display: flex;
-  flex-flow: row nowrap;
-  margin-bottom: 10px;
+.simple-form__agree {
+  display: none;
 }
 
 input.form-phone-inline__input {

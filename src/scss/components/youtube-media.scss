@@ -1,0 +1,65 @@
+.youtube-video {
+  position: relative;
+  width: 100%;
+  height: 0;
+  padding-bottom: 56.23%;
+
+  .btn-play {
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+  }
+
+  &--enabled {
+    cursor: pointer;
+
+    .btn-play {
+      display: block;
+    }
+  }
+
+  &:hover {
+
+    .btn-play {
+      background-color: $color-primary;
+      opacity: 1;
+
+      .icon {
+        transform: translate(-50%, -50%) scale(1.15);
+      }
+    }
+  }
+}
+
+.youtube-video__link {
+  display: block;
+
+  &:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    background-image: linear-gradient(180deg, rgba($color-bg-primary, 5%) 0%, rgba($color-bg-primary, 42%) 100%);
+    opacity: 0;
+    transition: opacity 0.4s ease;
+  }
+
+  &:hover:after {
+    opacity: 1;
+  }
+}
+
+.youtube-video__media {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
