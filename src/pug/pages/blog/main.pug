@@ -11,7 +11,7 @@ mixin blogArticleText(data)
         .blog-meta__item.blog-meta__item--category
           +icon-mono('folder')(class="blog-article__icon", width="24px", height="24px")
           span.visually-hidden Категория: #{' '}
-          a.blog-meta__link(href="/post.html") #{data.category}
+          a.blog-meta__link(href="/blog.html") #{data.category}
     .blog-article__description
       p #{data.desc}
 

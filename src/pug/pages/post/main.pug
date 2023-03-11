@@ -8,11 +8,15 @@
         .single-post__col.single-post__col--article.post-article
           .post-article__wrapper
             .post-article__header
-              .post-article__media(class= (articles[12].category === 'Видео') ? 'post-article__media--video js-play-video' : '')
-                +img(`large/${articles[12].src}`, articles[12].title)(class="post-article__img")
+              .post-article__media
                 if (articles[12].category === 'Видео')
-                  button.btn-play(aria-label="Смотреть")
-                    +icon-mono('play')(width="21px", height="26px")
+                  .youtube-video
+                    a.youtube-video__inner(href= `https://youtu.be/${articles[12].video}`, target="_blank")
+                      +img(`large/${articles[12].src}`, articles[12].title)(class="youtube-video__img")
+                    button.btn-play(aria-label="Смотреть")
+                      +icon-mono('play')(width="21px", height="26px")
+                else
+                  +img(`large/${articles[12].src}`, articles[12].title)(class="youtube-video__img")
               .post-article__meta.blog-meta
                 .blog-meta__item.blog-meta__item--date
                   +icon-mono('clock-basic')(class="blog-article__icon", width="24px", height="24px")
