@@ -6,7 +6,7 @@ mixin whereAreWe()
         .card-contacts__inner.card-contacts__inner--address
           h5 Адрес
           span #{siteAddress}
-          a.btn.btn--small.btn--stroke.btn--icon(href= routeYandexMap, target="_blank")
+          a.btn.btn--small.btn--stroke.btn--icon.js-modal-navigators(href= routeYandexMap, target="_blank")
             +icon-mono('location-outline')
             span Проложить маршрут
 

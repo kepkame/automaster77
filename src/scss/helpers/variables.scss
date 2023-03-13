@@ -5,6 +5,7 @@ $color-bg-primary: #1b2029;
 $color-bg-secondary: #e4e4e2;
 $color-bg-additional: mix(saturate(adjust-hue($color-bg-secondary, -200deg), 10%), #000000, 89.3%); // #c7cacd;
 $color-bg-linear: linear-gradient(90deg, $color-bg-additional 0%, $color-bg-secondary 100%);
+$color-bg-linear-light: linear-gradient(90deg, #dee0e2 0%, #f1f1f0 100%);
 $color-bg-dark: mix($color-bg-primary, #000000, 68%); // #12161C;
 $color-text-primary: #fafafa;
 $color-text-secondary: #282d34;

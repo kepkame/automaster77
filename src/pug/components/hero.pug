@@ -13,7 +13,7 @@ mixin hero(data)
                     .hero__benefits-col(class=`hero__benefits-col--${item.icon}`)
                       +icon-mono(`${item.icon}`)(width="32", height="32")
                       span= item.text
-              button.hero__btn.btn.btn-booking #{data.textButton}
+              button.hero__btn.btn.js-btn-appointment #{data.textButton}
             .hero__dots
               .icon-dots
 

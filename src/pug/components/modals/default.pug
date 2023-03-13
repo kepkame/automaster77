@@ -1,0 +1,12 @@
+mixin modal(nameClass= false, nameId= false, isHeader= false)
+  .modal(class= (nameClass) ? `modal--${nameClass}` : '', id= `modal-${nameId}`)
+    .modal__content
+      .modal__wrapper
+        if (isHeader)
+          .modal__header
+            h2.modal__title.title-line #{isHeader}
+        .modal__body
+          block
+        button.modal__close(aria-label="Закрыть модальное окно")
+          +icon-mono('close')(width="26px", height="26px")
+    .modal__bg

@@ -29,7 +29,7 @@
   }
 }
 
-.advantages__title {
+.advantages__col .advantages__title {
   font-size: 18px;
   font-family: $font-family-base;
   line-height: 26px;
@@ -40,7 +40,7 @@
     bottom: -9px;
     width: 75px;
     height: 2px;
-    background-color: rgba($color-text-primary, 0.3);
+    background-color: rgba($color-text-primary, 30%);
   }
 }
 

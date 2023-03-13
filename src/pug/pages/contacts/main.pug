@@ -72,7 +72,7 @@ section.page-contacts__main
                     else
                       a.contact-row__text(href= text.link) #{text.text}
                   if (item.title == 'Адрес')
-                    a.page-contacts__btn.btn.btn--small(href="https://yandex.ru/maps/213/moscow/?rtext=~55.865940%2C37.483373&rtt=auto&ruri=~ymapsbm1%3A%2F%2Forg%3Foid%3D122631074075&z=16", target="_blank") Проложить маршрут
+                    a.page-contacts__btn.btn.js-modal-navigators(href="https://yandex.ru/maps/213/moscow/?rtext=~55.865940%2C37.483373&rtt=auto&ruri=~ymapsbm1%3A%2F%2Forg%3Foid%3D122631074075&z=16", target="_blank") Проложить маршрут
     .page-contacts__col.page-contacts__col--map
       .page-contacts__map#map
       +route('page-contacts__route')

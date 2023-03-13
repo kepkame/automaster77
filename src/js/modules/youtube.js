@@ -1,25 +1,20 @@
 export default () => {
+  // This function extracts the video ID from a YouTube link
   function getIdVideo(link) {
-    const href = link.href;
-    const index = href.lastIndexOf('/');
+    const { href } = link;
+    const index = href.lastIndexOf('/'); // Find the last index of '/' in href
 
     return href.substring(index + 1);
   }
 
-  // function parseMediaURL(media) {
-  //   const regexp = /https:\/\/i\.ytimg\.com\/vi\/([a-zA-Z0-9_-]+)\/maxresdefault\.jpg/i;
-  //   const url = media.src;
-  //   const match = url.match(regexp);
-
-  //   return match[1];
-  // }
-
+  // This function generates a YouTube embed URL for a given video ID
   function generateURL(id) {
-    const query = '?rel=0&showinfo=0&autoplay=1';
+    const query = '?rel=0&showinfo=0&autoplay=1'; // URL parameters for autoplay
 
-    return `https://www.youtube.com/embed/${id}${query}`;
+    return `https://www.youtube.com/embed/${id}${query}`; // Return the generated URL
   }
 
+  // This function creates an iframe element for a given video ID
   function createIframe(id) {
     const iframe = document.createElement('iframe');
 
@@ -31,34 +26,29 @@ export default () => {
     return iframe;
   }
 
-  function loadYouTubeVideo(link, id) {
-
-  }
-
   // Load video
-  if (document.querySelector('.youtube-video')) {
-    const arrVideo = document.querySelectorAll('.youtube-video');
+  function initYouTubeVideo() {
+    if (document.querySelector('.youtube-video')) {
+      const arrVideo = document.querySelectorAll('.youtube-video');
 
-    arrVideo.forEach((video) => {
-      video.classList.add('youtube-video--enabled');
+      arrVideo.forEach((video) => {
+        video.classList.add('youtube-video--enabled');
 
-      video.addEventListener('click', (e) => {
-        e.preventDefault();
+        video.addEventListener('click', (e) => {
+          e.preventDefault();
 
-        const link = video.querySelector('.youtube-video__inner');
-        const button = video.querySelector('.btn-play');
-        const id = getIdVideo(link);
-        const iframe = createIframe(id);
+          const link = video.querySelector('.youtube-video__inner');
+          const button = video.querySelector('.btn-play');
+          const id = getIdVideo(link);
+          const iframe = createIframe(id);
 
-        link.remove();
-        button.remove();
-        video.appendChild(iframe);
+          link.remove();
+          button.remove();
+          video.appendChild(iframe);
+        });
       });
-    });
+    }
   }
 
-  // Open modal window
-  if (document.querySelector('.slider-coverflow__media')) {
-    const arrVideo = document.querySelectorAll('.slider-coverflow__media');
-  }
+  initYouTubeVideo();
 };

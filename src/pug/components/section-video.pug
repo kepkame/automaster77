@@ -20,9 +20,11 @@ mixin sectionVideo(slider, title = 'Видео работ на YouTube', maxSlid
                   .slider-coverflow__card.swiper-slide
                     .slider-coverflow__inner
                       h3.visually-hidden #{item.title}
-                      a.slider-coverflow__media(href= `https://youtu.be/${item.video}`, target="_blank")
-                        +imgNotLazy(item.src, item.title)
-                        .btn-play(aria-label="Смотреть", tabindex="0")
+                      .slider-coverflow__media
+                        .youtube-video
+                          a.youtube-video__inner(href= `https://youtu.be/${item.video}`, target="_blank")
+                            +imgNotLazy(item.src, item.title)
+                        button.btn-play(aria-label="Смотреть")
                           +icon-mono('play')(class="slider-3d__play", width="21", height="26")
 
           .slider-coverflow__pagination.swiper-pagination

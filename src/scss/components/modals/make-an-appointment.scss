@@ -1,0 +1,113 @@
+.modal--make-an-appointment {
+
+  .modal__content {
+
+  }
+}
+
+@media (min-width: 360px) {
+  .modal--make-an-appointment {
+
+    .modal__content {
+      top: 40px;
+      max-height: calc(100vh - 40px);
+    }
+
+    .upload__text {
+      display: inline-block;
+      margin-top: 5px;
+    }
+  }
+}
+
+@media (min-width: 435px) {
+  .modal--make-an-appointment {
+
+    .upload__text {
+      display: inline;
+      margin-top: 0;
+    }
+  }
+}
+
+@media (min-width: $grid-breakpoints-sm) {
+  .modal--make-an-appointment {
+
+    .modal__content {
+      max-width: 764px;
+    }
+
+    .form-estimate__row {
+
+      textarea {
+        width: 100%;
+        max-width: 100%;
+        min-width: 100%;
+      }
+
+      &:not(.form-estimate__row--full) {
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: space-between;
+      }
+
+      &--bottom:not(.form-estimate__row--full) {
+        display: block;
+
+        .form-estimate__col:first-child {
+          margin-bottom: 15px;
+        }
+      }
+    }
+
+    .form-estimate__col {
+      flex-basis: calc(50% - 5px);
+
+      &:not(:last-child) {
+        margin-bottom: 0;
+      }
+    }
+
+    .form-estimate__agreement {
+      margin-top: 4px;
+      margin-bottom: 0;
+    }
+
+    .upload__btn {
+      padding-right: 74px;
+
+      &-desktop {
+        display: inline;
+      }
+
+      &-mobile {
+        display: none;
+      }
+    }
+
+    .upload__icon {
+      display: inline-block;
+    }
+  }
+}
+
+@media (min-width: $grid-breakpoints-md) {
+  .modal--make-an-appointment .modal__content {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+
+@media (min-width: 795px) {
+  .modal--make-an-appointment {
+
+    .form-estimate__row--bottom:not(.form-estimate__row--full) {
+      display: flex;
+
+      .form-estimate__col:first-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+}

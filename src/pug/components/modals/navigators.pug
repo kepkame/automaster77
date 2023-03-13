@@ -1,0 +1,10 @@
+mixin modalNavigator()
+  +modal('navigator', 'navigator', 'Выберите навигатор')
+    +listOfNavigators
+    p Или скопируйте #{' '}
+      span.space-nowrap GPS-координаты:
+      br
+      | 55.865790, 37.483386
+    button.modal__btn.btn.btn--stroke.btn--icon.js-copy(data-copy="55.865790, 37.483386")
+      +icon-mono('copy')(widht="15px", height="18px")
+      span Копировать координаты

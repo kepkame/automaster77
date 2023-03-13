@@ -102,6 +102,10 @@ img {
   background-repeat: repeat;
 }
 
+.space-nowrap {
+  white-space: nowrap;
+}
+
 .visually-hidden:not(:focus):not(:active) {
   position: absolute;
   width: 1px;

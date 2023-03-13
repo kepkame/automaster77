@@ -1,0 +1,33 @@
+.modal--navigator {
+
+  .modal__btn {
+    padding-right: 16px;
+    padding-left: 16px;
+
+    &.btn--icon .icon {
+      display: none;
+    }
+
+    span {
+      padding-left: 0;
+    }
+  }
+}
+
+@media (min-width: 430px) {
+  .modal--navigator {
+
+    .modal__btn {
+      padding-right: 29px;
+      padding-left: 29px;
+
+      &.btn--icon .icon {
+        display: inline-block;
+      }
+
+      span {
+        padding-left: 30px;
+      }
+    }
+  }
+}

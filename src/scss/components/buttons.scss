@@ -132,6 +132,28 @@
   }
 }
 
+.btn--success {
+
+  &.btn--stroke {
+    color: $color-success;
+    border-color: $color-success;
+
+    &.btn--icon .icon {
+      fill: $color-success;
+    }
+
+    &:focus,
+    &:hover {
+      color: $color-text-primary;
+      background-color: $color-success;
+
+      &.btn--icon .icon {
+        fill: $color-text-primary;
+      }
+    }
+  }
+}
+
 .btn-arrow {
   display: inline-block;
   background-color: transparent;

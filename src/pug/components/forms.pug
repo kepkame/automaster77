@@ -1,16 +1,25 @@
 mixin formEstimate(className= false, textareaPlaceholder= 'Описание проблемного места автомобиля', txtButton= 'Отправить на оценку')
   form(class= className, class= "form-estimate", action= "", method= "post", enctype= "multipart/form-data")
+    .form-estimate__row.form-estimate__row--hidden
+      input(type= "hidden", name="form-estimate-service-name")
+      input(type= "hidden", name="form-estimate-url")
     .form-estimate__row
       .form-estimate__col
-        input(type= "tel", placeholder= "+7 (___) ___-__-__ *", required)
+        input(type= "tel", name="form-estimate-tel", placeholder= "+7 (___) ___-__-__ *", required)
       .form-estimate__col
-        input(type= "text", maxlength= "50", placeholder= "Марка и модель авто")
+        input(type= "text", name="form-estimate-car-brand", maxlength= "50", placeholder= "Марка и модель авто")
 
     .form-estimate__row.form-estimate__row--full
-      textarea(rows= "5", cols= "67", placeholder= textareaPlaceholder)
+      textarea(rows= "5", cols= "67", name="form-estimate-description", placeholder= textareaPlaceholder)
 
     .form-estimate__row.form-estimate__row--full
       +formInputFile('form-estimate__upload')
+
+    p.form-agree
+      span.wpcf7-form-control-wrap.agree
+        span.wpcf7-form-control.wpcf7-acceptance.invert
+          span.wpcf7-list-item
+            input.agree(type= "checkbox", name= "form-estimate-agree", value= "1", aria-invalid= "false")
 
     .form-estimate__row.form-estimate__row--bottom
       .form-estimate__col
@@ -41,14 +50,14 @@ mixin formInputFile(className= '', valueAccept= 'image/jpeg,image/png,video/*')
 
 mixin formPhoneInline(className= false)
   form.form-phone-inline(class= className)
-    .free-consultation__row
-      input.form-phone-inline__input(type= "tel", name= "phone", placeholder= "+7 (___) ___-__-__ *", required)
+    .form-phone-inline__row
+      input.form-phone-inline__input(type= "tel", name= "form-phone-inline", placeholder= "+7 (___) ___-__-__ *", required)
       input.form-phone-inline__submit.btn.btn--small(type= "submit", value= "Отправить")
-    p.simple-form__agree
+    p.form-agree
       span.wpcf7-form-control-wrap.agree
         span.wpcf7-form-control.wpcf7-acceptance.invert
           span.wpcf7-list-item
-            input.agree(type= "checkbox", name= "agree", value= "1", aria-invalid= "false")
+            input.agree(type= "checkbox", name= "form-phone-inline-agree", value= "1", aria-invalid= "false")
     p.form-phone-inline__acceptance Нажимая на кнопку «Отправить», Вы соглашаетесь #{' '}
       span с #{' '}
         a(href= sitePagePrivacy) условиями обработки персональных данных

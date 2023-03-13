@@ -9,7 +9,7 @@ mixin section-price-cards(data)
             .section-price-cards__description
               each paragraph in data.description
                 p #{paragraph}
-            button.btn.btn--small.btn-booking Записаться на покраску
+            button.btn.js-btn-appointment Записаться на покраску
         .section-price-cards__col.section-price-cards__col--prices
           +price-cards(data.prices, 'section-price-cards__cards')
-          button.btn.btn--small.btn-booking Записаться на покраску
+          button.btn.js-btn-appointment Записаться на покраску

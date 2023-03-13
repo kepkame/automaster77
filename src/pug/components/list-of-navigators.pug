@@ -1,0 +1,12 @@
+mixin listOfNavigators()
+  .list-of-navigators
+    .list-of-navigators__item
+      a.list-of-navigators__link(href= routeYandexMap, target="_blank")
+        .list-of-navigators__inner
+          +icon-multi('logo-yandex-map')(width="30px", height="30px")
+          span Яндекс Карты
+    .list-of-navigators__item
+      a.list-of-navigators__link(href= routeGoogleMap, target="_blank")
+        .list-of-navigators__inner
+          +icon-multi('logo-google-map')(width="30px", height="30px")
+          span Google Карты

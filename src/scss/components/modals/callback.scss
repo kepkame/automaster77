@@ -1,0 +1,28 @@
+.modal--callback {
+
+  .form-phone-inline__row {
+    flex-direction: column;
+    max-width: 300px;
+  }
+
+  .form-phone-inline__input {
+    flex-basis: 100%;
+    max-width: 100%;
+    padding: 10px 15px;
+  }
+
+  .form-phone-inline__submit {
+    flex-basis: 100%;
+    margin-top: 10px;
+    padding: 15px 25px;
+  }
+}
+
+@media (min-width: $grid-breakpoints-md) {
+  .modal--callback {
+
+    .modal__header {
+      padding-right: 0;
+    }
+  }
+}
